@@ -1,0 +1,40 @@
+name: Update plugin manifest
+
+on:
+  repository_dispatch:
+    types:
+      - plugin-updated
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# A dispatch only means "something changed", so collapsing a burst of pending runs is
+# safe: every run rebuilds all sources instead of trusting data from the caller.
+concurrency:
+  group: update-plugin-manifest
+  cancel-in-progress: false
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Generate and validate manifest
+      run: scripts/build-manifest.sh sources.txt generated-manifest.json
+
+    - name: Publish changed manifest
+      run: |
+        if cmp -s manifest.json generated-manifest.json; then
+          echo "No catalogue changes"
+          exit 0
+        fi
+
+        mv generated-manifest.json manifest.json
+        git config user.name "voc0der"
+        git config user.email "contact@netspace.in"
+        git add manifest.json
+        git commit -m "chore: update plugin catalogue [skip ci]"
+        git push
