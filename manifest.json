@@ -1,1 +1,737 @@
-[]
+[
+  {
+    "category": "Metadata",
+    "guid": "f5a3c7e1-9b2d-4f6a-8e0c-1d3b5a7c9e2f",
+    "name": "IMDb Ratings",
+    "description": "Downloads the IMDb ratings flat file daily and updates CommunityRating on all library items with an IMDb ID, without touching any other metadata.",
+    "owner": "voc0der",
+    "overview": "Scheduled task that keeps Jellyfin community ratings in sync with IMDb",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-imdb-rating-updater/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.0.21",
+        "changelog": "## What's Changed\n\n- feat: apply IMDb ratings at library-scan time (65751c9)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.20...1.0.0.21\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.21/IMDb_Ratings_1.0.0.21.zip",
+        "checksum": "3f8a9fe31294a36e579e95b055a187e5",
+        "timestamp": "2026-08-11T13:58:31Z"
+      },
+      {
+        "version": "1.0.0.20",
+        "changelog": "## What's Changed\n\n- test: tighten .NET 9 and midpoint coverage (7dae738)\n- chore(deps): Bump actions/setup-dotnet from 5 to 6 (40f1eff)\n- chore(deps): Bump actions/checkout from 6 to 7 (6619bf1)\n- fix: use Episode.SeasonId, retarget tests to net9.0, add CI test step (7b78f8d)\n- Extract SeasonRatingCalculator and add tests (77fb535)\n- fix: address PR review feedback for season ratings (d38c60b)\n- feat: add season ratings calculated from episode averages (ef284ce)\n- docs: remove star history section [skip ci] (8da625a)\n- chore: add icon to repo. [skip ci] (0dd3e96)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.19...1.0.0.20\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.20/IMDb_Ratings_1.0.0.20.zip",
+        "checksum": "346fbdaf773e3a2fb55df732040eac7c",
+        "timestamp": "2026-08-01T17:59:50Z"
+      },
+      {
+        "version": "1.0.0.19",
+        "changelog": "## What's Changed\n\n- chore: Bump the jellyfin-packages group with 2 updates (74cbd0b)\n- docs(readme): clarify scheduled task timing [skip ci] (95a3190)\n- docs(readme): refresh project presentation [skip ci] (2cdbebb)\n- chore(deps): bump actions/upload-artifact from 6 to 7 (162152d)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.18...1.0.0.19\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.19/IMDb_Ratings_1.0.0.19.zip",
+        "checksum": "2ea2ba835e24012663469c1e3df31174",
+        "timestamp": "2026-04-08T12:15:13Z"
+      },
+      {
+        "version": "1.0.0.18",
+        "changelog": "## What's Changed\n\n- Use inline onsubmit handler for config save (bd436ea)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.17...1.0.0.18\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.18/IMDb_Ratings_1.0.0.18.zip",
+        "checksum": "ef7c0ec61a45425e9fc19b3ea970a3af",
+        "timestamp": "2026-02-27T00:22:39Z"
+      },
+      {
+        "version": "1.0.0.17",
+        "changelog": "## What's Changed\n\n- Use button click handler instead of form submit for config save (442f5f7)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.16...1.0.0.17\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.17/IMDb_Ratings_1.0.0.17.zip",
+        "checksum": "61ef3f37f9b045a79d80144d5cfe94d5",
+        "timestamp": "2026-02-27T00:11:07Z"
+      },
+      {
+        "version": "1.0.0.16",
+        "changelog": "## What's Changed\n\n- Simplify config page to form submit and refactor parser LINQ (3ff245d)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.15...1.0.0.16\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.16/IMDb_Ratings_1.0.0.16.zip",
+        "checksum": "19b8351db34d0ebe6f2ccd32c2361029",
+        "timestamp": "2026-02-26T23:38:27Z"
+      },
+      {
+        "version": "1.0.0.15",
+        "changelog": "## What's Changed\n\n- Scope config page queries to page element and use event delegation (9b065bf)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.14...1.0.0.15\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.15/IMDb_Ratings_1.0.0.15.zip",
+        "checksum": "de1fbe9cbec3d02039a574b64bfc11da",
+        "timestamp": "2026-02-26T23:17:58Z"
+      },
+      {
+        "version": "1.0.0.14",
+        "changelog": "## What's Changed\n\n- Fix config save to write matching key casing from API response (887daae)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.13...1.0.0.14\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.14/IMDb_Ratings_1.0.0.14.zip",
+        "checksum": "b1c0e7e3684c5140433cc74bc5f9ee02",
+        "timestamp": "2026-02-26T22:58:35Z"
+      },
+      {
+        "version": "1.0.0.13",
+        "changelog": "## What's Changed\n\n- Handle PascalCase and camelCase config keys in config page (72764f4)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.12...1.0.0.13\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.13/IMDb_Ratings_1.0.0.13.zip",
+        "checksum": "6017dd23ecff4a2c92d7db92c05b75ba",
+        "timestamp": "2026-02-26T22:20:24Z"
+      },
+      {
+        "version": "1.0.0.12",
+        "changelog": "## What's Changed\n\n- Sort using directives (731bbfc)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.11...1.0.0.12\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.12/IMDb_Ratings_1.0.0.12.zip",
+        "checksum": "a3777d1063367b83bcfa227fc0e34ff3",
+        "timestamp": "2026-02-26T21:55:49Z"
+      },
+      {
+        "version": "1.0.0.11",
+        "changelog": "## What's Changed\n\n- Add parser unit tests (d6310ef)\n- Rewrite parser with byte-buffer I/O and Utf8Parser for lower allocations (c78aad6)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.10...1.0.0.11\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.11/IMDb_Ratings_1.0.0.11.zip",
+        "checksum": "4a575674887d55f13506681dfbd989af",
+        "timestamp": "2026-02-26T21:53:32Z"
+      },
+      {
+        "version": "1.0.0.10",
+        "changelog": "## What's Changed\n\n- Add opt-in sampled debug logging for per-item skip reasons (0298c33)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.9...1.0.0.10\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.10/IMDb_Ratings_1.0.0.10.zip",
+        "checksum": "2694991b1c0b97d73545f5874f5cf1b3",
+        "timestamp": "2026-02-26T21:42:34Z"
+      },
+      {
+        "version": "1.0.0.9",
+        "changelog": "## What's Changed\n\n- Throttle progress reporting to integer bucket boundaries (f3f7a02)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.8...1.0.0.9\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.9/IMDb_Ratings_1.0.0.9.zip",
+        "checksum": "731d3e4174a18c368b5545eaac76df85",
+        "timestamp": "2026-02-26T21:39:51Z"
+      },
+      {
+        "version": "1.0.0.8",
+        "changelog": "## What's Changed\n\n- Filter parsed IMDb ratings to library items for lower memory usage (b573c28)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.7...1.0.0.8\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.8/IMDb_Ratings_1.0.0.8.zip",
+        "checksum": "c9e942881ff9445c7a3046b2dc85375e",
+        "timestamp": "2026-02-26T21:37:41Z"
+      },
+      {
+        "version": "1.0.0.7",
+        "changelog": "## What's Changed\n\n- Support episode ratings and lower minimum vote threshold (15c4e31)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.6...1.0.0.7\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.7/IMDb_Ratings_1.0.0.7.zip",
+        "checksum": "0d1a9d20213ab0ecc17b9bdde74fa65b",
+        "timestamp": "2026-02-26T21:27:48Z"
+      },
+      {
+        "version": "1.0.0.6",
+        "changelog": "## What's Changed\n\n- Replace Path.Combine to avoid CodeQL path warnings (dcc9681)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.5...1.0.0.6\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.6/IMDb_Ratings_1.0.0.6.zip",
+        "checksum": "0b2e96bba0d97920f3eed6fb45eeca51",
+        "timestamp": "2026-02-26T18:19:38Z"
+      },
+      {
+        "version": "1.0.0.5",
+        "changelog": "## What's Changed\n\n- Fix CodeQL findings in IMDb downloader (fb153b9)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.4...1.0.0.5\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.5/IMDb_Ratings_1.0.0.5.zip",
+        "checksum": "f2680f22aab9efb96e323a1a23cc7872",
+        "timestamp": "2026-02-26T18:16:23Z"
+      },
+      {
+        "version": "1.0.0.4",
+        "changelog": "## What's Changed\n\n- Upgrade plugin to .NET 9 and Jellyfin 10.11.6 (9bc041e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.3...1.0.0.4\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.4/IMDb_Ratings_1.0.0.4.zip",
+        "checksum": "87263a7efec8c16deb47c6981697fad3",
+        "timestamp": "2026-02-26T18:12:08Z"
+      },
+      {
+        "version": "1.0.0.3",
+        "changelog": "## What's Changed\n\n- Fix config page save: use button click instead of form submit (d3a96f2)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.2...1.0.0.3\n",
+        "targetAbi": "10.10.7.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.3/IMDb_Ratings_1.0.0.3.zip",
+        "checksum": "51820ede23a9807426d21c9ac412aecd",
+        "timestamp": "2026-02-26T17:54:18Z"
+      },
+      {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- chore(deps): bump github/codeql-action from 3 to 4 (eb16bae)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.2/IMDb_Ratings_1.0.0.2.zip",
+        "checksum": "96bd66c62e63f32c16ce7bc8b10aa87c",
+        "timestamp": "2026-02-26T15:47:31Z"
+      },
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- Retry transient downloads and fall back to stale cache (1cd65c7)\n- Tighten batched rating updates on failure and null parents (9683ae9)\n- Improve batch update safety and input validation (98479ee)\n- Batch DB writes for rating updates, grouped by parent (0899669)\n- Harden IMDb ratings validation and retry handling (ca5a91d)\n- Initial commit: Jellyfin IMDb ratings plugin (cb06f9f)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-imdb-rating-updater/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.1/IMDb_Ratings_1.0.0.1.zip",
+        "checksum": "2ccf540fbccf31b8835f6cdc9eae0ba4",
+        "timestamp": "2026-02-26T15:46:27Z"
+      },
+      {
+        "version": "1.0.0.0",
+        "changelog": "Initial release\n- Daily scheduled task with manual trigger\n- IMDb flat file download with 23-hour cache\n- Minimum votes threshold\n- Configurable library types (Movies, TV Series)\n- Web UI configuration page",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-imdb-rating-updater/releases/download/1.0.0.0/IMDb_Ratings_1.0.0.0.zip",
+        "checksum": "PLACEHOLDER",
+        "timestamp": "2026-02-26T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "guid": "6b416775-6a90-436f-a034-796c52f5a317",
+    "name": "Restore User Data After Move",
+    "overview": "Recovers user data Jellyfin stranded when media paths changed",
+    "description": "Finds played state, resume positions, favourites and ratings that Jellyfin stranded when a media path changed and restores them onto the item that holds that media now. Tick the libraries to recover on the plugin's settings page: nothing is ticked on a fresh install, and nothing ticked means nothing runs. One scheduled task, shipping with no trigger of its own: it stays inert until you add one under Dashboard, Scheduled Tasks, timed to land after whatever moves your files and the library scan that follows it. Repeat runs are no-ops, it never overwrites state you have since set, and the stranded rows are never modified or deleted.",
+    "category": "General",
+    "owner": "voc0der",
+    "versions": [
+      {
+        "version": "1.0.0.27",
+        "changelog": "## What's Changed\n\n- chore: keep one plan and one ledger, not five and twenty (#39) (38f5859)\n- chore(release): update the plugin catalogues for version 1.0.0.26 (37496c0)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.26...1.0.0.27\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.27/RestoreUserDataAfterMove_1.0.0.27_jellyfin-10.11.11.zip",
+        "checksum": "bc94588e307f6f28af5d4365c06f5b3a",
+        "timestamp": "2026-08-18T13:16:09Z"
+      },
+      {
+        "version": "1.0.0.26",
+        "changelog": "## What's Changed\n\n- refactor: take the code-scanning findings that were real, keep the one that was not (8e18753)\n- chore(tests): one NSubstitute across both suites, and a patched SQLite in each (aef852e)\n- chore(release): update the plugin catalogues for version 1.0.0.25 (f1611f5)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.25...1.0.0.26\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.26/RestoreUserDataAfterMove_1.0.0.26_jellyfin-10.11.11.zip",
+        "checksum": "16fa32c006866fefe20ac4297e821154",
+        "timestamp": "2026-08-17T16:05:49Z"
+      },
+      {
+        "version": "1.0.0.25",
+        "changelog": "## What's Changed\n\n- chore: Bump NSubstitute from 5.3.0 to 6.2.0 (#38) (dee3217)\n- chore(release): update the plugin catalogues for version 1.0.0.24 (532b817)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.24...1.0.0.25\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.25/RestoreUserDataAfterMove_1.0.0.25_jellyfin-10.11.11.zip",
+        "checksum": "2b8cdcf4a72170259bbbca30339e4405",
+        "timestamp": "2026-08-17T16:03:25Z"
+      },
+      {
+        "version": "1.0.0.24",
+        "changelog": "## What's Changed\n\n- chore: Bump Microsoft.NET.Test.Sdk from 18.8.1 to 18.9.0 (#37) (add35db)\n- chore(release): update the plugin catalogues for version 1.0.0.23 (91e3ab8)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.23...1.0.0.24\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.24/RestoreUserDataAfterMove_1.0.0.24_jellyfin-10.11.11.zip",
+        "checksum": "e379262b8a1acac260e206d17f1627f7",
+        "timestamp": "2026-08-17T15:54:38Z"
+      },
+      {
+        "version": "1.0.0.23",
+        "changelog": "## What's Changed\n\n- ci(gap): run the live server proof on every commit that ships (2638413)\n- chore(release): update the plugin catalogues for version 1.0.0.22 (f6b1cbb)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.22...1.0.0.23\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.23/RestoreUserDataAfterMove_1.0.0.23_jellyfin-10.11.11.zip",
+        "checksum": "c0519569bd8aa6d42bdd5d96aff0f4fa",
+        "timestamp": "2026-08-17T15:50:22Z"
+      },
+      {
+        "version": "1.0.0.22",
+        "changelog": "## What's Changed\n\n- fix(apply): verify against the database, not the manager's cache alone (77e63cb)\n- test(apply): drive the write path through the faults it exists to decline (11dcec8)\n- test(database): run the reads against both servers' provider stacks (f08c65c)\n- chore(release): update the plugin catalogues for version 1.0.0.21 (d3add14)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.21...1.0.0.22\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.22/RestoreUserDataAfterMove_1.0.0.22_jellyfin-10.11.11.zip",
+        "checksum": "8ebbb47d3629b388b8cfdd158b11edfb",
+        "timestamp": "2026-08-17T15:23:51Z"
+      },
+      {
+        "version": "1.0.0.21",
+        "changelog": "## What's Changed\n\n- test(database): run every read against the host's real JellyfinDbContext (e196a3b)\n- chore(release): update the plugin catalogues for version 1.0.0.20 (85094b1)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.20...1.0.0.21\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.21/RestoreUserDataAfterMove_1.0.0.21_jellyfin-10.11.11.zip",
+        "checksum": "9cc5917faffc8f4a93144e3d4c49ae28",
+        "timestamp": "2026-08-17T11:20:39Z"
+      },
+      {
+        "version": "1.0.0.20",
+        "changelog": "## What's Changed\n\n- fix(audit): fail on provenance that cannot be established, and fetch what can (0ca3c9c)\n- test(gap): count the cleared prefixes without counting the selection (0796d5e)\n- fix(apply): revalidate the sentinel across every key the target answers to (d29386c)\n- fix(analysis): let an exact GUID settle its side instead of skipping the check (0a86e85)\n- chore(release): update the plugin catalogues for version 1.0.0.19 (1f07888)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.19...1.0.0.20\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.20/RestoreUserDataAfterMove_1.0.0.20_jellyfin-10.11.11.zip",
+        "checksum": "85fc99fc8fcef8637f561282627a3eba",
+        "timestamp": "2026-08-17T11:04:44Z"
+      },
+      {
+        "version": "1.0.0.19",
+        "changelog": "## What's Changed\n\n- fix(catalogue): withdraw the mismatched 1.0.0.4 entry and audit the rest (a70628f)\n- test(gap): tick the harness's libraries, and keep its state out of Bash's (ba7f5ca)\n- test(jellyfin): cover the adapter against real Jellyfin entities (caa89ba)\n- perf(scope): stop stat-ing media outside the selected libraries (854353f)\n- fix(scope): refuse a run whose selected library has gone (dcec603)\n- fix(apply): re-check the stranded rows before each restore (5056f99)\n- fix(revalidation): look for same-series siblings before each write (a1c5971)\n- fix(analysis): refuse one stranded snapshot resolving to two episodes (036d680)\n- chore(release): update the plugin catalogues for version 1.0.0.18 (36e6e44)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.18...1.0.0.19\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.19/RestoreUserDataAfterMove_1.0.0.19_jellyfin-10.11.11.zip",
+        "checksum": "7f1f34a6b8b520803c916294385ef300",
+        "timestamp": "2026-08-17T01:23:24Z"
+      },
+      {
+        "version": "1.0.0.18",
+        "changelog": "## What's Changed\n\n- docs(update): warn that an untouched install now has no scope (7214f2f)\n- chore(release): update the plugin catalogues for version 1.0.0.17 (9693205)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.17...1.0.0.18\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.18/RestoreUserDataAfterMove_1.0.0.18_jellyfin-10.11.11.zip",
+        "checksum": "6b782c8be5bce93fb345fc1693ed2f79",
+        "timestamp": "2026-08-14T17:44:41Z"
+      },
+      {
+        "version": "1.0.0.17",
+        "changelog": "## What's Changed\n\n- fix(config): take the scheduled-task shim off the settings page (09a69cc)\n- fix(scope): make an empty library selection mean nothing, not everything (0eb86c8)\n- chore(release): update the plugin catalogues for version 1.0.0.16 (12dfe6e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.16...1.0.0.17\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.17/RestoreUserDataAfterMove_1.0.0.17_jellyfin-10.11.11.zip",
+        "checksum": "2aead029658b3adbbc6594c6039e86d8",
+        "timestamp": "2026-08-14T17:43:26Z"
+      },
+      {
+        "version": "1.0.0.16",
+        "changelog": "## What's Changed\n\n- fix(revalidation): re-check key uniqueness against the catalogue per write (c5d075e)\n- fix(task): write a per-write ledger as the run goes, not a plan at the end (060d082)\n- docs(safety): state the write race instead of promising it away (97d42a7)\n- docs(release): point both server lines at their own catalogue (628ab3d)\n- chore(release): update the plugin catalogues for version 1.0.0.15 (9daf456)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.15...1.0.0.16\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.16/RestoreUserDataAfterMove_1.0.0.16_jellyfin-10.11.11.zip",
+        "checksum": "0254f344dff343bca1eb875bd8d8cfcb",
+        "timestamp": "2026-08-14T17:00:52Z"
+      },
+      {
+        "version": "1.0.0.15",
+        "changelog": "## What's Changed\n\n- docs(sweep): acknowledge the field result instead of claiming there are none (2608f97)\n- docs(architecture): describe the one task that ships, not the two designed (810e7e2)\n- test(sweep): cover the 150-episode series-length point (899acd7)\n- fix(reporting): report what the run did, not what it wants you to do next (68f5b7e)\n- fix(plan): name match kinds and exclusions in the plan's own vocabulary (47554ec)\n- docs(design): say that the write loop records cancellation rather than throwing (1582264)\n- test(gap): prove the outcome record and the legacy-config migration on a server (dcfcfe7)\n- fix(catalogue): give Jellyfin 12 a repository that offers the 12 build (64c0ded)\n- ci(release): hold every pending release run instead of dropping the middle one (1c40250)\n- fix(metadata): stop promising a nightly run the task cannot perform (07de482)\n- fix(task): publish the run's record before letting cancellation out (40241a8)\n- fix(task): stop the batch at the first write that did not complete (e661a63)\n- fix(plan): record what became of each write instead of assuming it landed (a26db66)\n- fix(config): make Run now save the library selection before starting (8c52746)\n- fix(config): clear scope settings no version since 1.0.0.8 can edit (6274172)\n- fix(scope): refuse an unreadable library selection instead of widening it (f96bfdb)\n- fix(matching): require a retention stamp on both corroborating rows (f209ec0)\n- chore(release): update manifest.json for version 1.0.0.14 (6f514aa)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.14...1.0.0.15\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.15/RestoreUserDataAfterMove_1.0.0.15_jellyfin-10.11.11.zip",
+        "checksum": "72301bdf7b13921d12292dea42edffe4",
+        "timestamp": "2026-08-14T13:20:44Z"
+      },
+      {
+        "version": "1.0.0.14",
+        "changelog": "## What's Changed\n\n- refactor(task): make the row-existence query the last check before the save (08f37fa)\n- fix(revalidation): re-check key uniqueness before each write (cef36db)\n- fix(revalidation): read library membership from the item, not a map (a428b7d)\n- chore(release): update manifest.json for version 1.0.0.13 (198ce0e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.13...1.0.0.14\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.14/RestoreUserDataAfterMove_1.0.0.14_jellyfin-10.11.11.zip",
+        "checksum": "0b7c235ad939ff08c340f0cdc61b0ee1",
+        "timestamp": "2026-08-13T23:51:40Z"
+      },
+      {
+        "version": "1.0.0.13",
+        "changelog": "## What's Changed\n\n- ci(release): publish the catalogue only after the assets exist (78d9866)\n- fix(task): re-check identity, scope, and row existence before each write (40a6f95)\n- fix(plan): carry a rating JSON has no number for as text (6d31a7a)\n- chore(release): update manifest.json for version 1.0.0.12 (a7c8585)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.12...1.0.0.13\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.13/RestoreUserDataAfterMove_1.0.0.13_jellyfin-10.11.11.zip",
+        "checksum": "cb9a3defa378b59bb9460084de9efd66",
+        "timestamp": "2026-08-13T23:01:02Z"
+      },
+      {
+        "version": "1.0.0.12",
+        "changelog": "## What's Changed\n\n- ci(release): use a conventional subject for the manifest bump (d752463)\n- Update manifest.json for version 1.0.0.11 (c5b826f)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.11...1.0.0.12\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.12/RestoreUserDataAfterMove_1.0.0.12_jellyfin-10.11.11.zip",
+        "checksum": "c61dcb40347ce19b613ddd9a95a30926",
+        "timestamp": "2026-08-13T21:57:27Z"
+      },
+      {
+        "version": "1.0.0.11",
+        "changelog": "## What's Changed\n\n- Fix the seven problems the code review turned up (e5cd86d)\n- Update manifest.json for version 1.0.0.10 (01ae7f9)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.10...1.0.0.11\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.11/RestoreUserDataAfterMove_1.0.0.11_jellyfin-10.11.11.zip",
+        "checksum": "98cde81fa604b7cf6c2bfaab22732ff8",
+        "timestamp": "2026-08-13T21:51:08Z"
+      },
+      {
+        "version": "1.0.0.10",
+        "changelog": "## What's Changed\n\n- Clear the open code-scanning alerts (eac8ba7)\n- Update manifest.json for version 1.0.0.9 (85dc31b)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.9...1.0.0.10\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.10/RestoreUserDataAfterMove_1.0.0.10_jellyfin-10.11.11.zip",
+        "checksum": "51895d1a7e0327c2277cf64030fc51ef",
+        "timestamp": "2026-08-13T21:03:38Z"
+      },
+      {
+        "version": "1.0.0.9",
+        "changelog": "## What's Changed\n\n- Warn that updating drops the old default trigger (a94368f)\n- Ship with no trigger, and prove the scan guard defers a run (3af840a)\n- Update manifest.json for version 1.0.0.8 (7232b56)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.8...1.0.0.9\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.9/RestoreUserDataAfterMove_1.0.0.9_jellyfin-10.11.11.zip",
+        "checksum": "3bf8b6156b0165cbdcbbc5d2c45524f5",
+        "timestamp": "2026-08-13T20:57:13Z"
+      },
+      {
+        "version": "1.0.0.8",
+        "changelog": "## What's Changed\n\n- Prove the identification lag the nightly schedule exists for (a09b0bc)\n- Collapse the two tasks into one nightly restore task (3a0a3e8)\n- Update manifest.json for version 1.0.0.7 (a9ac918)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.7...1.0.0.8\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.8/RestoreUserDataAfterMove_1.0.0.8_jellyfin-10.11.11.zip",
+        "checksum": "1452858a4c38a01f40d06e5e10367bad",
+        "timestamp": "2026-08-13T19:11:40Z"
+      },
+      {
+        "version": "1.0.0.7",
+        "changelog": "## What's Changed\n\n- fix(gap): stop the harness from killing the server it tests (7403b05)\n- docs: stop describing the plugin as analysis-only (5901e7d)\n- test(gap): prove the apply path against real Jellyfin servers (c4e7407)\n- refactor(apply): drop the arm, the API, and the confirmation ceremony (685534d)\n- feat(apply): add arming, whole-plan preflight, and the apply task (8f57a42)\n- feat(apply): add the IUserDataManager write adapter (96e18e6)\n- docs(evidence): record the first real-installation analysis run (78e8af0)\n- Update manifest.json for version 1.0.0.6 (4440c20)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.6...1.0.0.7\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.7/RestoreUserDataAfterMove_1.0.0.7_jellyfin-10.11.11.zip",
+        "checksum": "5ac9687debf5459558c8ab668daa8d90",
+        "timestamp": "2026-08-13T10:58:42Z"
+      },
+      {
+        "version": "1.0.0.6",
+        "changelog": "## What's Changed\n\n- fix(release): serialize runs and pin the tag to the built commit (8f4f983)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.5...1.0.0.6\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.6/RestoreUserDataAfterMove_1.0.0.6_jellyfin-10.11.11.zip",
+        "checksum": "6f3e994137aedb5375772ceffeb1d1b7",
+        "timestamp": "2026-08-12T23:53:46Z"
+      },
+      {
+        "version": "1.0.0.5",
+        "changelog": "## What's Changed\n\n- chore(release): rebuild from current main (b742ba9)\n- Update manifest.json for version 1.0.0.4 (6743df8)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.4...1.0.0.5\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.5/RestoreUserDataAfterMove_1.0.0.5_jellyfin-10.11.11.zip",
+        "checksum": "528a52f2133973c8d0bbd62513374d12",
+        "timestamp": "2026-08-12T23:49:23Z"
+      },
+      {
+        "version": "1.0.0.3",
+        "changelog": "## What's Changed\n\n- chore(deps): bump xunit.runner.visualstudio from 3.1.4 to 3.1.5 (dec9ce5)\n- chore(deps): bump Microsoft.NET.Test.Sdk from 17.14.1 to 18.8.1 (8c24bac)\n- chore(deps): bump coverlet.collector from 6.0.4 to 10.0.1 (8afd017)\n- docs(contributing): add branch, commit, and PR naming rules (a4323b9)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.2...1.0.0.3\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.3/RestoreUserDataAfterMove_1.0.0.3_jellyfin-10.11.11.zip",
+        "checksum": "6cf3c9254d6a3558d65869e8b462365d",
+        "timestamp": "2026-08-12T19:53:17Z"
+      },
+      {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- Take the plugin manifest owner from the same property as the assembly (916318e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.2/RestoreUserDataAfterMove_1.0.0.2_jellyfin-10.11.11.zip",
+        "checksum": "148f865dca256ff43c13d27272dd0e4f",
+        "timestamp": "2026-08-12T19:39:30Z"
+      },
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- Add analyzer-only alpha for stranded Jellyfin user data (6ab3667)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/releases/download/1.0.0.1/RestoreUserDataAfterMove_1.0.0.1_jellyfin-10.11.11.zip",
+        "checksum": "fb734bea263d9bbe4adb681efedfd881",
+        "timestamp": "2026-08-12T19:35:31Z"
+      }
+    ],
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-restore-userdata-after-move/main/icon.png"
+  },
+  {
+    "category": "General",
+    "guid": "1ac3cf0f-f0f9-443a-be08-be38e48ff683",
+    "name": "Seerr Proxy",
+    "description": "Authenticated Jellyfin transport for Seerr. Linked Jellyfin users can discover the plugin, call allowlisted Seerr API endpoints through Jellyfin, and submit requests as themselves without receiving Seerr credentials.",
+    "owner": "voc0der",
+    "overview": "Proxy Seerr API calls through Jellyfin authentication",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-seerr-proxy/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.0.8",
+        "changelog": "## What's Changed\n\n\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.7...1.0.0.8\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.8/Seerr_Proxy_1.0.0.8.zip",
+        "checksum": "2b584352a7bd2ce7164cad8053a680e8",
+        "timestamp": "2026-07-23T22:53:04Z"
+      },
+      {
+        "version": "1.0.0.6",
+        "changelog": "## What's Changed\n\n- fix: remove unsupported plugin image override (cf0508a)\n- chore: trigger release (3618596)\n- docs(plugin): clarify seerr proxy description (#5) (e021aaa)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.5...1.0.0.6\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.6/Seerr_Proxy_1.0.0.6.zip",
+        "checksum": "fe9e70db619ac1c8de1869df76118a5f",
+        "timestamp": "2026-06-06T12:03:32Z"
+      },
+      {
+        "version": "1.0.0.5",
+        "changelog": "## What's Changed\n\n- refactor(proxy): remove legacy endpoints (#4) (2028438)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.4...1.0.0.5\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.5/Seerr_Proxy_1.0.0.5.zip",
+        "checksum": "d071317132508bbbf34152ad55640f6c",
+        "timestamp": "2026-06-06T10:16:09Z"
+      },
+      {
+        "version": "1.0.0.4",
+        "changelog": "## What's Changed\n\n- feat(proxy): expose api v1 transport (#3) (fb05777)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.3...1.0.0.4\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.4/Seerr_Proxy_1.0.0.4.zip",
+        "checksum": "e64eee29b722da1087f12def288ae0d4",
+        "timestamp": "2026-06-06T10:01:47Z"
+      },
+      {
+        "version": "1.0.0.3",
+        "changelog": "## What's Changed\n\n- feat(discover): proxy allowlisted seerr api (0bbdbdb)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.2...1.0.0.3\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.3/Seerr_Proxy_1.0.0.3.zip",
+        "checksum": "7353bfcf1979259eebea45db042c3a08",
+        "timestamp": "2026-06-05T22:57:05Z"
+      },
+      {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- Fix authenticated Jellyfin user lookup (3051ff7)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.2/Seerr_Proxy_1.0.0.2.zip",
+        "checksum": "d5880df96591ca30cc8b9c3d34e22082",
+        "timestamp": "2026-06-05T22:12:24Z"
+      },
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- feat: add seerr proxy plugin (3004ba2)\n- chore: initialize repository (0f168a5)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-seerr-proxy/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.1/Seerr_Proxy_1.0.0.1.zip",
+        "checksum": "6c05ba89b08fadb01caa116fc3243e6d",
+        "timestamp": "2026-06-05T19:23:02Z"
+      },
+      {
+        "version": "1.0.0.0",
+        "changelog": "Initial release\n- Authenticated Jellyfin endpoints for status, linked user lookup, and media requests\n- Server-side Seerr API key storage\n- Jellyfin user to Seerr user resolution through /api/v1/user/jellyfin/{jellyfinUserId}\n- Seerr requests submitted with server-derived X-API-User\n- Dashboard configuration page",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-seerr-proxy/releases/download/1.0.0.0/Seerr_Proxy_1.0.0.0.zip",
+        "checksum": "PLACEHOLDER",
+        "timestamp": "2026-06-05T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "guid": "8d4bcbe8-ddd2-4c3a-ba8f-a7b500943e6b",
+    "name": "Session Provisioning",
+    "overview": "Admin-authorized session provisioning for Jellyfin users",
+    "description": "Lets an authenticated Jellyfin administrator, subject to an additional provisioning secret, create a normal device session for an existing Jellyfin user. Built for managed client deployment, so a client can ship already enrolled without the user's password, an SSO browser flow, or Quick Connect. It does not provide SSO, create users, or disable Jellyfin authentication, and it stores nothing: the secret's hash comes from the server's environment, and Jellyfin issues and revokes the session itself.",
+    "category": "General",
+    "owner": "voc0der",
+    "versions": [
+      {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- docs(readme): tighten setup and usage prose (eb6f698)\n- docs(readme): update coverage badge to 95% (7323420)\n- refactor: clear the remaining CodeQL quality alerts (1e1a629)\n- fix(security): sanitize caller-supplied device IDs before logging (7fd5e83)\n- chore(deps): bump NSubstitute from 5.3.0 to 6.2.0 (b77b753)\n- chore(deps): bump Microsoft.NET.Test.Sdk from 17.12.0 to 18.9.0 (21a56e7)\n- chore(deps): bump coverlet.collector from 6.0.4 to 10.0.1 (c34783c)\n- chore: update repository assets and contributing guide [skip ci] (db3bf95)\n- chore(release): update the plugin catalogue for version 1.0.0.1 (c22db95)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-session-provisioning/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-session-provisioning/releases/download/1.0.0.2/SessionProvisioning_1.0.0.2_jellyfin-10.11.11.zip",
+        "checksum": "793cbe41b8053c76fe7e42f1f538f38b",
+        "timestamp": "2026-08-23T02:49:26Z"
+      },
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- chore: release pipeline, plugin catalogue, and a README for humans (5740e5a)\n- docs: record round-2 review responses in the review handoff (815b04c)\n- fix: re-check kill switches after the serializer wait, and repair vacuous assertions (5c6e66f)\n- fix: serialize minting, and make the controller injectable and unit-testable (65329e1)\n- tests: give the log-leak assertions a positive control (1290339)\n- fix: pin the assembly version to build.yaml, and rate limit the mint endpoint (e355d83)\n- fix: catch Jellyfin's SecurityException so refusals surface as 409 (1d7f1f3)\n- security: refuse minting unless the plugin is active, and document the lifecycle (2165ca4)\n- docs: match the stateless design and record verified upstream behavior (ce69899)\n- chore: relicense under MIT (voc0der) (fb7fc90)\n- tests: add end-to-end security smoke suite (30647d7)\n- api: add admin-protected mint endpoint backed by Jellyfin's session manager (856f69c)\n- security: source the provisioning secret hash from the environment (31a79f0)\n- security: add provisioning-secret verifier and configuration plumbing (1f02838)\n- docs: record verified 10.11.11 session API behavior and security invariants (36d00c4)\n- template: scaffold from official Jellyfin plugin template, pinned to 10.11.11 (1b7266e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-session-provisioning/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-session-provisioning/releases/download/1.0.0.1/SessionProvisioning_1.0.0.1_jellyfin-10.11.11.zip",
+        "checksum": "7688e02b9bc4e7ae0e3cee216982a99a",
+        "timestamp": "2026-08-21T16:38:15Z"
+      }
+    ],
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-session-provisioning/main/icon.png"
+  },
+  {
+    "category": "General",
+    "guid": "fdcf27a6-bd64-42e3-9f57-41880552bf83",
+    "name": "Transcode Nag",
+    "description": "Intelligently nags users when they transcode due to unsupported formats/codecs, while allowing bitrate-based transcoding without harassment.",
+    "owner": "voc0der",
+    "overview": "Smart transcoding monitor that only nags for format/codec incompatibility",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-transcode-nag/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.1.28",
+        "changelog": "## What's Changed\n\n- refactor: address CodeQL readability alerts (082561a)\n- chore(deps): Bump github/codeql-action from 4 to 4.37.4 (4d05056)\n- chore(deps): Bump actions/setup-dotnet from 5 to 6 (61aca86)\n- chore(deps): Bump actions/checkout from 6 to 7 (91cfe15)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.27...v1.0.1.28\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.28/Transcode_Nag_v1.0.1.28.zip",
+        "checksum": "7814a9565911a3f0c01877a50ee066a4",
+        "timestamp": "2026-08-24T16:05:39Z"
+      },
+      {
+        "version": "1.0.1.27",
+        "changelog": "## What's Changed\n\n- chore: bump version to 1.0.1.27 (c4640b4)\n- feat: add Message of the Day (8e04c1c)\n- docs: remove star history section [skip ci] (1cd2e56)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.26...v1.0.1.27\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.27/Transcode_Nag_v1.0.1.27.zip",
+        "checksum": "33767eaccea9ff741f5a86c702fa99ac",
+        "timestamp": "2026-08-10T15:03:35Z"
+      },
+      {
+        "version": "1.0.1.26",
+        "changelog": "## What's Changed\n\n- feat: add Live TV exclusion setting (0158209)\n- chore: add plugin icon [skip ci] (980fe39)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.25...v1.0.1.26\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.26/Transcode_Nag_v1.0.1.26.zip",
+        "checksum": "f164da9dd02c9dc1466f13f9c5f02080",
+        "timestamp": "2026-06-17T23:42:58Z"
+      },
+      {
+        "version": "1.0.1.25",
+        "changelog": "## What's Changed\n\n- Improve nag message delivery diagnostics (d083c1d)\n- Remove broken 1.0.1.23 from manifest [skip ci] (9a53881)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.24...v1.0.1.25\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.25/Transcode_Nag_v1.0.1.25.zip",
+        "checksum": "452c66116cf041d5aae85a7d55ecb393",
+        "timestamp": "2026-05-01T11:01:30Z"
+      },
+      {
+        "version": "1.0.1.24",
+        "changelog": "## What's Changed\n\n- Fix XML serialization for reason message overrides (7e333c1)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.23...v1.0.1.24\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.24/Transcode_Nag_v1.0.1.24.zip",
+        "checksum": "ed682ea0c425b7564baf6985f253feaa",
+        "timestamp": "2026-04-24T19:54:47Z"
+      },
+      {
+        "version": "1.0.1.22",
+        "changelog": "## What's Changed\n\n## !BREAKING!\n\n- This release changes the plugin GUID to resolve a collision with another Jellyfin plugin.\n- Jellyfin will treat 1.0.1.22 as a new plugin identity, so you will need to reconfigure the plugin after installing this version.\n\n- Fix duplicate plugin GUID (!BREAKING!: reconfigure after 1.0.1.22) (855a350)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.21...v1.0.1.22\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.22/Transcode_Nag_v1.0.1.22.zip",
+        "checksum": "24c70ef5359c46d1ebed9ace95f77a22",
+        "timestamp": "2026-04-23T15:06:58Z"
+      },
+      {
+        "version": "1.0.1.21",
+        "changelog": "## What's Changed\n\n- Add client include/exclude filters for nags (3239ccf)\n- Add README screenshots [skip ci] (d49ca0c)\n- Remove README license section [skip ci] (ccd50af)\n- Fix README layout and star history [skip ci] (d6d4f85)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.20...v1.0.1.21\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.21/Transcode_Nag_v1.0.1.21.zip",
+        "checksum": "196600a46a4510cb827dac87f0b88a7b",
+        "timestamp": "2026-04-07T20:23:51Z"
+      },
+      {
+        "version": "1.0.1.20",
+        "changelog": "## What's Changed\n\n- Bump version to 1.0.1.20 (7548364)\n- Shorten README to practical usage info (62d7380)\n- Add local tests and use measured coverage badge (cda5400)\n- Update README badges and star history layout (5768c6a)\n- chore(deps): Bump actions/upload-artifact from 6 to 7 (c3ba2ac)\n- chore(deps): Bump github/codeql-action from 3 to 4 (50dc30e)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.19...v1.0.1.20\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.20/Transcode_Nag_v1.0.1.20.zip",
+        "checksum": "07b2a7bcc96fe6424617a367b3c914ff",
+        "timestamp": "2026-03-15T02:33:07Z"
+      },
+      {
+        "version": "1.0.1.19",
+        "changelog": "## What's Changed\n\n- Fix CodeQL path and exception handling alerts (9a701eb)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.18...v1.0.1.19\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.19/Transcode_Nag_v1.0.1.19.zip",
+        "checksum": "b475d81ea9377c212f2534bd06db4e9a",
+        "timestamp": "2026-02-11T16:12:38Z"
+      },
+      {
+        "version": "1.0.1.18",
+        "changelog": "## What's Changed\n\n- Embed live monitor in settings and remove sidebar page (27c567d)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.17...v1.0.1.18\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.18/Transcode_Nag_v1.0.1.18.zip",
+        "checksum": "b00ce064524bf0caafdb069531b9eb08",
+        "timestamp": "2026-02-11T03:02:25Z"
+      },
+      {
+        "version": "1.0.1.17",
+        "changelog": "## What's Changed\n\n- Add configurable nag controls, live sidebar page, and CI workflows (400ed3a)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.16...v1.0.1.17\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.17/Transcode_Nag_v1.0.1.17.zip",
+        "checksum": "ee4b17581c88d6e7856d07601f116b66",
+        "timestamp": "2026-02-11T02:33:42Z"
+      },
+      {
+        "version": "1.0.1.16",
+        "changelog": "## What's Changed\n\n- Fix user exclusion GUID format mismatch, update docs (21864ab)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.15...v1.0.1.16\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.16/Transcode_Nag_v1.0.1.16.zip",
+        "checksum": "96c397151630b35220bcca601db57c17",
+        "timestamp": "2026-02-10T23:32:48Z"
+      },
+      {
+        "version": "1.0.1.15",
+        "changelog": "## What's Changed\n\n- chore: Bump the jellyfin-packages group with 2 updates (798a293)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.14...v1.0.1.15\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.15/Transcode_Nag_v1.0.1.15.zip",
+        "checksum": "c132fe64072c8003bb964d5c788ead04",
+        "timestamp": "2026-02-05T16:59:02Z"
+      },
+      {
+        "version": "1.0.1.13",
+        "changelog": "## What's Changed\n\n- Add Dependabot configuration for automated dependency updates (5bc8104)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.12...v1.0.1.13\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.13/Transcode_Nag_v1.0.1.13.zip",
+        "checksum": "845026b4aecbd338e972e5c17886474f",
+        "timestamp": "2026-02-05T16:55:33Z"
+      },
+      {
+        "version": "1.0.1.12",
+        "changelog": "## What's Changed\n\n- Add user exclusion feature to prevent nag messages for specific users (bb4a426)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.11...v1.0.1.12\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.12/Transcode_Nag_v1.0.1.12.zip",
+        "checksum": "151a50513d579169e678c704d77a4f68",
+        "timestamp": "2026-02-04T13:08:31Z"
+      },
+      {
+        "version": "1.0.1.11",
+        "changelog": "## What's Changed\n\n- Fix: Embed actual version number in plugin DLL assembly metadata (e407928)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.10...v1.0.1.11\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.11/Transcode_Nag_v1.0.1.11.zip",
+        "checksum": "b89c0fabf27f93e24a6467e43da3da9c",
+        "timestamp": "2026-02-02T13:01:01Z"
+      },
+      {
+        "version": "1.0.1.10",
+        "changelog": "## What's Changed\n\n- Fix: Remove 'v' prefix from plugin folder name inside ZIP (04e9ba7)\n- Update manifest.json for version v1.0.1.9 (922bc48)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.9...v1.0.1.10\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.10/Transcode_Nag_v1.0.1.10.zip",
+        "checksum": "8b8e09cf2183368278b51dd85894cf3d",
+        "timestamp": "2026-02-02T11:17:25Z"
+      },
+      {
+        "version": "1.0.1.9",
+        "changelog": "## What's Changed\n\n- Fix: v1.0.1.8 changelog formatting (1f6e8be)\n- Fix: Changelog formatting in Jellyfin UI (82a1812)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.8...v1.0.1.9\n",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.9/Transcode_Nag_v1.0.1.9.zip",
+        "checksum": "4c94a9f592d193683b49b5f3ce4f28d7",
+        "timestamp": "2026-02-02T11:04:48Z"
+      },
+      {
+        "version": "1.0.1.8",
+        "changelog": "## What's Changed\n\n- Fix: Include configPage.html as embedded resource (6c19123)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.7...v1.0.1.8",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.8/Transcode_Nag_v1.0.1.8.zip",
+        "checksum": "8d83f20df0ae5a67bc78e047ce347fe1",
+        "timestamp": "2026-02-02T11:00:18Z"
+      },
+      {
+        "version": "1.0.1.7",
+        "changelog": "## What's Changed\n\n- Fix: Remove 'v' prefix from manifest versions to prevent plugin page crash (06bc04a)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.6...v1.0.1.7",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.7/Transcode_Nag_v1.0.1.7.zip",
+        "checksum": "7719ee9f191565d0d7e6213cd9f9df89",
+        "timestamp": "2026-02-02T10:51:29Z"
+      },
+      {
+        "version": "1.0.1.6",
+        "changelog": "## What's Changed\n\n- Fix nullable pattern in session activity (f034f18)\n- Add login nag tracking and event kinds (e740dfa)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.5...v1.0.1.6",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.6/Transcode_Nag_v1.0.1.6.zip",
+        "checksum": "d5d61dcd86ba603c0aedc1489efea0c4",
+        "timestamp": "2026-01-25T17:01:31Z"
+      },
+      {
+        "version": "1.0.1.5",
+        "changelog": "## What's Changed\n\n- Use DI Correct typing. (2a2eced)\n- Fix: Use MediaBrowser.Model.Session namespace for TranscodeReason (015a35c)\n- Fix: Add Jellyfin.Data package reference for TranscodeReason type (828f9bc)\n- Refactor login nag to use week/month dropdown and template placeholders (1c7726f)\n- Add login nag feature with transcode history tracking (5c6a96c)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.4...v1.0.1.5",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.5/Transcode_Nag_v1.0.1.5.zip",
+        "checksum": "fb0c51a554e67ac7356b5796218c0163",
+        "timestamp": "2026-01-25T16:40:50Z"
+      },
+      {
+        "version": "1.0.1.4",
+        "changelog": "## What's Changed\n\n- Fix: Use IHostedService instead of IServerEntryPoint (6ee2f90)\n- Refactor: Switch from polling to event-driven playback monitoring (f75d62b)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.3...v1.0.1.4",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.4/Transcode_Nag_v1.0.1.4.zip",
+        "checksum": "3ead1c2cda4cd2da62644e96ec825c98",
+        "timestamp": "2026-01-24T16:35:37Z"
+      },
+      {
+        "version": "1.0.1.3",
+        "changelog": "## What's Changed\n\n- Fix: Nag once per video instead of once per login session (54559f5)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.2...v1.0.1.3",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.3/Transcode_Nag_v1.0.1.3.zip",
+        "checksum": "bd017ce5d7f20f266f434c9452b2597c",
+        "timestamp": "2026-01-23T19:59:19Z"
+      },
+      {
+        "version": "1.0.1.2",
+        "changelog": "## What's Changed\n\n- Fix: Pass session ID to SendMessageCommand (6fa387a)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1.1...v1.0.1.2",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.2/Transcode_Nag_v1.0.1.2.zip",
+        "checksum": "b2d4913e89e7ac7c7614da4d471a3ffd",
+        "timestamp": "2026-01-23T13:19:05Z"
+      },
+      {
+        "version": "1.0.1.1",
+        "changelog": "## What's Changed\n\n- Use jq for manifest.json updates (1bc7745)\n- Fix: Use temporary Python file instead of inline heredoc (737fc3d)\n- Fix: Correct Python heredoc in release workflow (375957b)\n- Add Jellyfin plugin repository support with proper versioning (38ce74a)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-transcode-nag/compare/v1.0.1...v1.0.1.1",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/v1.0.1.1/Transcode_Nag_v1.0.1.1.zip",
+        "checksum": "4bf4190a72f6b0b631e9fe7224fb7996",
+        "timestamp": "2026-01-23T13:09:42Z"
+      },
+      {
+        "version": "1.0.0.0",
+        "changelog": "Initial release\n- Smart detection using TranscodeReasons API\n- Configurable messages and intervals\n- Web UI configuration page\n- Background monitoring service",
+        "targetAbi": "10.9.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-transcode-nag/releases/download/1.0.0.0/Transcode_Nag_1.0.0.0.zip",
+        "checksum": "PLACEHOLDER",
+        "timestamp": "2026-01-23T00:00:00Z"
+      }
+    ]
+  }
+]
