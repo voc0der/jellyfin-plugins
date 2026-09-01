@@ -24,7 +24,9 @@
         "Enabled": true,
         "SeerrBaseUrl": "http://jellyseerr:5055",
         "SeerrApiKey": "MTc2MjkwMTQ0NTIzM2ZhOGQ0YzE5LWRlbW8ta2V5",
-        "RequestTimeoutSeconds": 30
+        "RequestTimeoutSeconds": 30,
+        "$comment-ApiKeyFromEnvironment": "Set explicitly so the shot is deterministic. false renders the common case: the key stored in plugin configuration, with the note about admin credentials being able to read it back. true would blank and disable the field instead.",
+        "ApiKeyFromEnvironment": false
       }
     },
     {
