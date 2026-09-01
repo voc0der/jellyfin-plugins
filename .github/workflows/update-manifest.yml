@@ -4,6 +4,19 @@ on:
   repository_dispatch:
     types:
       - plugin-updated
+  # Keeps the README table honest when the sources or the generator change by
+  # hand. The commit below carries [skip ci], so the workflow's own push does
+  # not trigger another run.
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+      - manifest.json
+      - sources.txt
+      - scripts/build-manifest.sh
+      - scripts/build-readme.sh
+      - .github/workflows/update-manifest.yml
   workflow_dispatch:
 
 permissions:
@@ -25,16 +38,21 @@ jobs:
     - name: Generate and validate manifest
       run: scripts/build-manifest.sh sources.txt generated-manifest.json
 
-    - name: Publish changed manifest
+    - name: Regenerate catalogue and README
       run: |
-        if cmp -s manifest.json generated-manifest.json; then
+        mv generated-manifest.json manifest.json
+        scripts/build-readme.sh sources.txt manifest.json README.md
+
+    - name: Publish changes
+      run: |
+        git add manifest.json README.md
+
+        if git diff --cached --quiet; then
           echo "No catalogue changes"
           exit 0
         fi
 
-        mv generated-manifest.json manifest.json
         git config user.name "voc0der"
         git config user.email "contact@netspace.in"
-        git add manifest.json
         git commit -m "chore: update plugin catalogue [skip ci]"
         git push
