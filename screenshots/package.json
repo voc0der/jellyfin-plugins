@@ -1,0 +1,13 @@
+{
+  "name": "jellyfin-plugin-screenshots",
+  "version": "1.0.0",
+  "description": "Renders each plugin's configuration page inside a real Jellyfin dashboard and captures a screenshot.",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  },
+  "private": true
+}
