@@ -17,7 +17,7 @@
     },
     {
       "id": "seerr-proxy",
-      "repo": "../jellyfin-seerr-proxy",
+      "repo": "../jellyfin-plugin-seerr-proxy",
       "page": "Configuration/configPage.html",
       "output": "docs/images/seerr-proxy-settings.png",
       "config": {
