@@ -1,6 +1,6 @@
 All projects are located above this directory:
-../jellyfin-transcode-nag
-../jellyfin-imdb-rating-updater
+../jellyfin-plugin-transcode-guard
+../jellyfin-plugin-imdb-ratings
 ../jellyfin-plugin-session-provisioning
 ../jellyfin-plugin-restore-userdata-after-move
 ../jellyfin-plugin-seerr-proxy

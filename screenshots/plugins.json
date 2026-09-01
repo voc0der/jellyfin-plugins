@@ -2,8 +2,8 @@
   "$comment": "Each entry renders one plugin config page. `config` is what the stubbed ApiClient.getPluginConfiguration returns, so it decides exactly what the screenshot shows -- keep it realistic and free of anything real.",
   "plugins": [
     {
-      "id": "imdb-rating-updater",
-      "repo": "../jellyfin-imdb-rating-updater",
+      "id": "imdb-ratings",
+      "repo": "../jellyfin-plugin-imdb-ratings",
       "page": "Configuration/configPage.html",
       "output": "docs/images/imdb-ratings-settings.png",
       "config": {
@@ -71,22 +71,22 @@
       }
     },
     {
-      "id": "transcode-nag",
-      "repo": "../jellyfin-transcode-nag",
+      "id": "transcode-guard",
+      "repo": "../jellyfin-plugin-transcode-guard",
       "page": "Configuration/configPage.html",
       "shots": [
         {
-          "output": "docs/images/transcode-nag-playback-settings.png",
+          "output": "docs/images/transcode-guard-playback-settings.png",
           "to": "Client Filters",
           "maxHeight": 1200
         },
         {
-          "output": "docs/images/transcode-nag-login-monitor.png",
+          "output": "docs/images/transcode-guard-login-monitor.png",
           "from": "Login Nag Settings",
           "to": "Message of the Day"
         },
         {
-          "output": "docs/images/transcode-nag-gpu-guard.png",
+          "output": "docs/images/transcode-guard-gpu-guard.png",
           "from": "GPU Resource Guard",
           "maxHeight": 1200
         }

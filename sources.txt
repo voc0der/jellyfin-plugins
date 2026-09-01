@@ -1,5 +1,5 @@
-https://raw.githubusercontent.com/voc0der/jellyfin-transcode-nag/main/manifest.json
-https://raw.githubusercontent.com/voc0der/jellyfin-imdb-rating-updater/main/manifest.json
+https://raw.githubusercontent.com/voc0der/jellyfin-plugin-transcode-guard/main/manifest.json
+https://raw.githubusercontent.com/voc0der/jellyfin-plugin-imdb-ratings/main/manifest.json
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-session-provisioning/main/manifest.json
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-restore-userdata-after-move/main/manifest.json
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-seerr-proxy/main/manifest.json
