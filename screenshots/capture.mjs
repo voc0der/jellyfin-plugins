@@ -136,32 +136,64 @@ async function capturePlugin(page, plugin, base) {
     });
     await page.waitForTimeout(200);
 
-    // The .page element stretches to fill the viewport, so screenshotting it
-    // directly leaves a tall band of empty background under short config pages.
-    // Measuring the furthest-down descendant instead crops to the content, while
-    // starting at y=0 keeps the dashboard header and its back arrow in frame.
-    const clip = await page.evaluate(() => {
-        const host = document.querySelector('.page.type-interior');
-        const content = host.querySelector('.content-primary');
-        const bottom = [...content.querySelectorAll('*')]
-            .map(node => node.getBoundingClientRect().bottom)
-            .reduce((lowest, edge) => Math.max(lowest, edge), 0);
-        const box = host.getBoundingClientRect();
+    // A page long enough to be unreadable at README width is captured as several
+    // section shots instead, each running from one heading to the next.
+    const shots = plugin.shots ?? [{ output: plugin.output }];
+    const written = [];
 
-        return {
-            x: box.x + window.scrollX,
-            y: 0,
-            width: box.width,
-            height: bottom + window.scrollY + 24
-        };
-    });
+    for (const shot of shots) {
+        const clip = await page.evaluate(({ from, to, maxHeight }) => {
+            const host = document.querySelector('.page.type-interior');
+            const content = host.querySelector('.content-primary');
+            const box = host.getBoundingClientRect();
 
-    const outputPath = resolve(REPO_ROOT, plugin.repo, plugin.output);
-    await mkdir(dirname(outputPath), { recursive: true });
-    await page.screenshot({ path: outputPath, clip, fullPage: true });
+            const headingTop = text => {
+                const heading = [...content.querySelectorAll('h1, h2, h3')]
+                    .find(node => node.textContent.trim() === text);
+
+                if (!heading) {
+                    throw new Error(`no heading titled "${text}" on this page`);
+                }
+
+                return heading.getBoundingClientRect().top + window.scrollY;
+            };
+
+            // Without a `from`, the shot starts at y=0 so the dashboard header and
+            // its back arrow stay in frame; later sections start at their heading.
+            const top = from ? Math.max(0, headingTop(from) - 24) : 0;
+
+            const bottom = to
+                ? headingTop(to) - 24
+                : [...content.querySelectorAll('*')]
+                    .map(node => node.getBoundingClientRect().bottom)
+                    .reduce((lowest, edge) => Math.max(lowest, edge), 0) + window.scrollY + 24;
+
+            // A section can run to several thousand pixels, which is unreadable
+            // embedded in a README. Capping turns it into a screenful starting at
+            // its heading -- the page is real, just not scrolled to the end. The
+            // cut is then pulled back to the nearest element edge above it, so the
+            // shot does not end through the middle of a row.
+            let capped = bottom;
+
+            if (maxHeight && bottom > top + maxHeight) {
+                const limit = top + maxHeight;
+                capped = [...content.querySelectorAll('*')]
+                    .map(node => node.getBoundingClientRect().bottom + window.scrollY)
+                    .filter(edge => edge > top && edge <= limit)
+                    .reduce((highest, edge) => Math.max(highest, edge), top + maxHeight * 0.5) + 12;
+            }
+
+            return { x: box.x + window.scrollX, y: top, width: box.width, height: capped - top };
+        }, { from: shot.from ?? null, to: shot.to ?? null, maxHeight: shot.maxHeight ?? null });
+
+        const outputPath = resolve(REPO_ROOT, plugin.repo, shot.output);
+        await mkdir(dirname(outputPath), { recursive: true });
+        await page.screenshot({ path: outputPath, clip, fullPage: true });
+        written.push(outputPath);
+    }
 
     page.off('console', onError);
-    return { outputPath, errors };
+    return { written, errors };
 }
 
 async function main() {
@@ -197,8 +229,8 @@ async function main() {
         for (const plugin of plugins) {
             process.stdout.write(`  ${plugin.id} ... `);
             try {
-                const { outputPath, errors } = await capturePlugin(page, plugin, server.base);
-                console.log(relative(REPO_ROOT, outputPath));
+                const { written, errors } = await capturePlugin(page, plugin, server.base);
+                console.log(written.map(path => relative(REPO_ROOT, path)).join('\n      '));
                 for (const error of errors) {
                     console.log(`      page console error: ${error.slice(0, 200)}`);
                 }

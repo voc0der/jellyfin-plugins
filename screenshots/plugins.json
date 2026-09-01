@@ -40,11 +40,31 @@
       },
       "api": {
         "getVirtualFolders": [
-          { "Name": "Movies", "ItemId": "a1f4c6d28e3b47f09c5d1e8a7b2f3c40", "CollectionType": "movies" },
-          { "Name": "TV Shows", "ItemId": "b7e2d9c14a6f48b3812c5d0e9f3a7b61", "CollectionType": "tvshows" },
-          { "Name": "Anime", "ItemId": "c3a8b5e07d2f419e6a4b8c1d5e9f0a72", "CollectionType": "tvshows" },
-          { "Name": "Documentaries", "ItemId": "d9c1e4a35b8f42d7903e6a2b8c4f1d53", "CollectionType": "movies" },
-          { "Name": "Music", "ItemId": "e5b0a7c29f4d436a815c2e7b0d3f6a84", "CollectionType": "music" }
+          {
+            "Name": "Movies",
+            "ItemId": "a1f4c6d28e3b47f09c5d1e8a7b2f3c40",
+            "CollectionType": "movies"
+          },
+          {
+            "Name": "TV Shows",
+            "ItemId": "b7e2d9c14a6f48b3812c5d0e9f3a7b61",
+            "CollectionType": "tvshows"
+          },
+          {
+            "Name": "Anime",
+            "ItemId": "c3a8b5e07d2f419e6a4b8c1d5e9f0a72",
+            "CollectionType": "tvshows"
+          },
+          {
+            "Name": "Documentaries",
+            "ItemId": "d9c1e4a35b8f42d7903e6a2b8c4f1d53",
+            "CollectionType": "movies"
+          },
+          {
+            "Name": "Music",
+            "ItemId": "e5b0a7c29f4d436a815c2e7b0d3f6a84",
+            "CollectionType": "music"
+          }
         ]
       }
     },
@@ -52,7 +72,23 @@
       "id": "transcode-nag",
       "repo": "../jellyfin-transcode-nag",
       "page": "Configuration/configPage.html",
-      "output": "docs/images/transcode-nag-settings.png",
+      "shots": [
+        {
+          "output": "docs/images/transcode-nag-playback-settings.png",
+          "to": "Client Filters",
+          "maxHeight": 1200
+        },
+        {
+          "output": "docs/images/transcode-nag-login-monitor.png",
+          "from": "Login Nag Settings",
+          "to": "Message of the Day"
+        },
+        {
+          "output": "docs/images/transcode-nag-gpu-guard.png",
+          "from": "GPU Resource Guard",
+          "maxHeight": 1200
+        }
+      ],
       "config": {
         "NagMessage": "This is transcoding and using extra server power. Try a client that can direct play this file.",
         "UseStickyPlaybackMessages": false,
@@ -61,7 +97,10 @@
         "EnableLogging": false,
         "ExcludeLiveTv": true,
         "IncludedClientPatterns": [],
-        "ExcludedClientPatterns": ["Jellyfin Android TV", "Kodi*"],
+        "ExcludedClientPatterns": [
+          "Jellyfin Android TV",
+          "Kodi*"
+        ],
         "EnableLoginNag": true,
         "LoginNagThreshold": 5,
         "LoginNagTimeWindow": "Week",
@@ -93,9 +132,18 @@
       },
       "api": {
         "getUsers": [
-          { "Id": "4e6ea05698214e7c940d2af1806f1f8e", "Name": "demo" },
-          { "Id": "7a2c9d0b5e134f8a96b3c7d1e0f2a845", "Name": "livingroom" },
-          { "Id": "9f1b3e6c8a0d47259c4e7b2f5a8d0c31", "Name": "guest" }
+          {
+            "Id": "4e6ea05698214e7c940d2af1806f1f8e",
+            "Name": "demo"
+          },
+          {
+            "Id": "7a2c9d0b5e134f8a96b3c7d1e0f2a845",
+            "Name": "livingroom"
+          },
+          {
+            "Id": "9f1b3e6c8a0d47259c4e7b2f5a8d0c31",
+            "Name": "guest"
+          }
         ],
         "getSessions": [
           {
@@ -103,10 +151,16 @@
             "UserName": "livingroom",
             "Client": "Jellyfin Web",
             "DeviceName": "Firefox",
-            "NowPlayingItem": { "Name": "Nosferatu (1922)", "Type": "Movie" },
+            "NowPlayingItem": {
+              "Name": "Nosferatu (1922)",
+              "Type": "Movie"
+            },
             "TranscodingInfo": {
               "IsVideoDirect": false,
-              "TranscodeReasons": ["VideoCodecNotSupported", "ContainerNotSupported"]
+              "TranscodeReasons": [
+                "VideoCodecNotSupported",
+                "ContainerNotSupported"
+              ]
             }
           },
           {
@@ -114,10 +168,15 @@
             "UserName": "guest",
             "Client": "Jellyfin Roku",
             "DeviceName": "Roku Ultra",
-            "NowPlayingItem": { "Name": "Metropolis", "Type": "Movie" },
+            "NowPlayingItem": {
+              "Name": "Metropolis",
+              "Type": "Movie"
+            },
             "TranscodingInfo": {
               "IsVideoDirect": false,
-              "TranscodeReasons": ["VideoRangeTypeNotSupported"]
+              "TranscodeReasons": [
+                "VideoRangeTypeNotSupported"
+              ]
             }
           }
         ]
