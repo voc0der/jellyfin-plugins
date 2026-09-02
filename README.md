@@ -9,6 +9,9 @@ https://raw.githubusercontent.com/voc0der/jellyfin-plugins/main/manifest.json
 
 Add that URL under **Dashboard > Plugins > Repositories** in Jellyfin.
 
+> [!WARNING]
+> Do not use this in conjunction with individual plugin manifests.
+
 ## Plugins
 
 <!-- BEGIN PLUGIN TABLE -->
