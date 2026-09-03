@@ -83,12 +83,24 @@
         {
           "output": "docs/images/transcode-guard-login-monitor.png",
           "from": "Login Nag Settings",
-          "to": "Message of the Day"
+          "to": "Transcode Limit"
+        },
+        {
+          "output": "docs/images/transcode-guard-transcode-limit.png",
+          "from": "Transcode Limit",
+          "to": "Message of the Day",
+          "maxHeight": 1500
         },
         {
           "output": "docs/images/transcode-guard-gpu-guard.png",
           "from": "GPU Resource Guard",
+          "to": "Paused Transcode Reaper",
           "maxHeight": 1200
+        },
+        {
+          "output": "docs/images/transcode-guard-paused-reaper.png",
+          "from": "Paused Transcode Reaper",
+          "maxHeight": 1700
         }
       ],
       "config": {
@@ -108,6 +120,12 @@
         "LoginNagTimeWindow": "Week",
         "LoginNagMessage": "You have transcoded {count} times this week. Check your client's playback settings.",
         "UseStickyLoginNagMessages": false,
+        "$comment-EnableTranscodeLimit": "On, because off collapses the whole section to a single checkbox and there is nothing left to screenshot. Threshold sits above LoginNagThreshold, which is the way the page tells admins to set it.",
+        "EnableTranscodeLimit": true,
+        "TranscodeLimitThreshold": 15,
+        "TranscodeLimitHeader": "Transcode limit reached",
+        "TranscodeLimitMessage": "You've transcoded {{transcodes}} videos in the last {{timewindow}} due to unsupported formats, which is over this server's limit of {{limit}}. Switch to a client that can direct play (mpv, VLC, or Jellyfin Media Player) to keep watching.",
+        "UseStickyTranscodeLimitMessages": false,
         "EnableMotd": true,
         "MotdMessage": "Scheduled maintenance this Sunday 02:00-04:00 UTC.",
         "UseStickyMotdMessages": true,
@@ -120,8 +138,17 @@
         "GpuGuardDeniedHeader": "Server busy",
         "GpuGuardDeniedMessage": "The GPU is at capacity right now. Try again in a few minutes.",
         "UseStickyGpuGuardMessages": false,
+        "$comment-EnablePausedTranscodeReaper": "On for the same reason as the transcode limit: off hides every field behind it and leaves a lone checkbox to photograph. Values are the shipped defaults.",
+        "EnablePausedTranscodeReaper": true,
+        "PausedTranscodeTimeoutMinutes": 25,
+        "PausedTranscodeWarningMinutes": 2,
+        "PausedTranscodeWarningHeader": "Still there?",
+        "PausedTranscodeWarningMessage": "Your paused video will be stopped in {{minutes}} minute(s) to free up server resources. Press play to keep watching.",
+        "UseStickyPausedTranscodeMessages": false,
+        "ReapPausedDirectPlay": false,
         "ExcludedUserIds": [],
         "MotdExcludedUserIds": [],
+        "PausedTranscodeExcludedUserIds": [],
         "AlertTranscodeReasons": [
           "ContainerNotSupported",
           "VideoCodecNotSupported",
