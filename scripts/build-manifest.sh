@@ -18,6 +18,56 @@ fi
 work_dir=$(mktemp -d)
 trap 'rm -rf "$work_dir"' EXIT
 
+# raw.githubusercontent.com is a Fastly edge cache serving max-age=300, and a
+# query string does not bust it. That matters when several plugins release
+# within the same few minutes: the first rebuild warms the edge with each
+# plugin's pre-release manifest, so a later rebuild in the same burst can read a
+# copy that predates the release it was dispatched for and publish a catalogue
+# silently missing a version, with no further dispatch coming to correct it.
+# The contents API reads the ref itself rather than an edge copy, so prefer it
+# whenever a token is available and keep raw as the fallback.
+fetch_source() {
+  local source_url=$1
+  local destination=$2
+
+  if [ -n "${GITHUB_TOKEN:-}" ] &&
+     [[ "$source_url" =~ ^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.+)$ ]]; then
+    local owner=${BASH_REMATCH[1]}
+    local repo=${BASH_REMATCH[2]}
+    local ref=${BASH_REMATCH[3]}
+    local path=${BASH_REMATCH[4]}
+
+    echo "Fetching $source_url (contents API)"
+    if curl \
+         --fail \
+         --location \
+         --retry 3 \
+         --show-error \
+         --silent \
+         --header "Accept: application/vnd.github.raw" \
+         --header "Authorization: Bearer $GITHUB_TOKEN" \
+         --header "X-GitHub-Api-Version: 2022-11-28" \
+         --output "$destination" \
+         "https://api.github.com/repos/$owner/$repo/contents/$path?ref=$ref" &&
+       jq -e . "$destination" >/dev/null 2>&1; then
+      return 0
+    fi
+
+    echo "contents API read failed for $source_url, falling back to raw" >&2
+  else
+    echo "Fetching $source_url"
+  fi
+
+  curl \
+    --fail \
+    --location \
+    --retry 3 \
+    --show-error \
+    --silent \
+    --output "$destination" \
+    "$source_url"
+}
+
 source_files=()
 line_number=0
 
@@ -30,15 +80,7 @@ while IFS= read -r source_url || [ -n "$source_url" ]; do
   fi
 
   source_file="$work_dir/source-${line_number}.json"
-  echo "Fetching $source_url"
-  curl \
-    --fail \
-    --location \
-    --retry 3 \
-    --show-error \
-    --silent \
-    --output "$source_file" \
-    "$source_url"
+  fetch_source "$source_url" "$source_file"
 
   if ! jq -e '
     type == "array" and
