@@ -16,14 +16,27 @@ on:
       - sources.txt
       - scripts/build-manifest.sh
       - scripts/build-readme.sh
+      - scripts/publish-catalogue.sh
       - .github/workflows/update-manifest.yml
+  # A safety net, not the main path. Dispatches are collapsed by the concurrency
+  # group below, so if the last run of a release burst fails, or a plugin's
+  # dispatch never arrives, nothing else would notice the catalogue had gone
+  # stale. A daily rebuild is a no-op whenever the catalogue is already correct.
+  schedule:
+    - cron: '17 5 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+env:
+  # How long a dispatch waits before rebuilding, to let the rest of a release
+  # burst arrive. See the settle step below.
+  SETTLE_SECONDS: 30
+
 # A dispatch only means "something changed", so collapsing a burst of pending runs is
-# safe: every run rebuilds all sources instead of trusting data from the caller.
+# safe: every run rebuilds all sources instead of trusting data from the caller, which
+# also means the run that pushes last publishes a complete catalogue, not a partial one.
 concurrency:
   group: update-plugin-manifest
   cancel-in-progress: false
@@ -31,28 +44,30 @@ concurrency:
 jobs:
   update-manifest:
     runs-on: ubuntu-latest
+    # A hung run holds the concurrency group, and every dispatch that queues
+    # behind it is collapsed away rather than kept, so failing fast loses less
+    # than waiting out the six hour default.
+    timeout-minutes: 10
 
     steps:
     - uses: actions/checkout@v7
 
-    - name: Generate and validate manifest
-      run: scripts/build-manifest.sh sources.txt generated-manifest.json
+    # Releasing several plugins at once dispatches this workflow once per plugin,
+    # seconds apart. Pausing before the rebuild lets the rest of the burst arrive
+    # and collapse into the single pending run the concurrency group allows, so
+    # the burst publishes one complete catalogue instead of a partial one per
+    # plugin, and every source has had time to land before anything reads it.
+    - name: Let a release burst settle
+      if: github.event_name == 'repository_dispatch'
+      run: sleep "$SETTLE_SECONDS"
 
-    - name: Regenerate catalogue and README
+    - name: Publish catalogue and README
+      env:
+        # Lets build-manifest.sh read each source through the contents API
+        # instead of the raw CDN, which can serve a copy of a source manifest
+        # that predates the release this run was dispatched for.
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
-        mv generated-manifest.json manifest.json
-        scripts/build-readme.sh sources.txt manifest.json README.md
-
-    - name: Publish changes
-      run: |
-        git add manifest.json README.md
-
-        if git diff --cached --quiet; then
-          echo "No catalogue changes"
-          exit 0
-        fi
-
         git config user.name "voc0der"
         git config user.email "contact@netspace.in"
-        git commit -m "chore: update plugin catalogue [skip ci]"
-        git push
+        scripts/publish-catalogue.sh sources.txt manifest.json README.md

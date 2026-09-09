@@ -30,7 +30,7 @@ To change what the catalogue publishes, change `sources.txt` and let the workflo
 | `README.md` | Generated between the `<!-- BEGIN PLUGIN TABLE -->` / `<!-- END PLUGIN TABLE -->` markers. Prose outside them is hand-written and preserved. |
 | `projects.txt` | A note of where each plugin is checked out locally. Not used by any script. |
 | `screenshots/` | Renders each plugin's config page. See `screenshots/README.md`. |
-| `scripts/` | The two generators and the screenshot wrapper. |
+| `scripts/` | The two generators, the publisher CI calls, and the screenshot wrapper. |
 
 ## Building the catalogue locally
 
@@ -47,6 +47,10 @@ two entries with one GUID make Jellyfin's behaviour undefined, so it fails the b
 `build-readme.sh` rewrites only the region between the table markers, and fails if either
 marker is missing or duplicated.
 
+`publish-catalogue.sh` is what CI runs: it wraps both generators in the commit-and-push retry
+described below. It is not needed for a local build, but running it locally does commit and
+push, so prefer the two generators above when you only want to see the output.
+
 Rows follow `sources.txt` rather than the manifest, because one source may publish several
 plugins. Each source is matched to its plugins by the `owner/repo` it was fetched from.
 
@@ -61,12 +65,44 @@ It runs on three triggers:
 | Trigger | When |
 |---|---|
 | `repository_dispatch` (`plugin-updated`) | A plugin repository finished a release and notified this one. This is the normal path. |
-| `push` to `main` | Only when `README.md`, `manifest.json`, `sources.txt`, `scripts/build-*.sh` or the workflow itself changes. |
+| `push` to `main` | Only when `README.md`, `manifest.json`, `sources.txt`, `scripts/*.sh` or the workflow itself changes. |
+| `schedule` (daily) | A safety net, not the normal path. See below. |
 | `workflow_dispatch` | Manual, from the Actions tab or `gh workflow run update-manifest.yml`. |
 
 Runs share a concurrency group and do not cancel each other. A dispatch only means "something
 changed", and every run rebuilds every source from scratch rather than trusting the caller, so
 a burst of pending runs is safe to collapse.
+
+### Releasing several plugins at once
+
+That burst is the case the workflow is built around, and three separate things can go wrong
+when plugins release within seconds of each other:
+
+**The runs collide on `main`.** Each run commits and pushes, and a push is rejected whenever
+`main` moved underneath it — either another run in the burst published first, or the checkout
+predates a commit the git backend had not finished replicating. A bare `git push` then fails
+the run and drops the update. `publish-catalogue.sh` instead retries: on a rejection it fetches
+`main`, resets onto it, **regenerates from the sources**, and pushes again, up to five times
+with a growing backoff. Rebuilding on each attempt is what makes the retry safe — the catalogue
+is derived entirely from the sources, so there is nothing to conflict over, and whichever run
+pushes last still publishes a catalogue built from every source.
+
+**The sources read stale.** `raw.githubusercontent.com` is an edge cache serving `max-age=300`,
+and a query string does not bust it. The first run of a burst warms that cache with each
+plugin's *pre-release* manifest, so a later run can read a copy older than the release it was
+dispatched for and publish a catalogue silently missing a version — with no further dispatch
+coming to correct it. So `build-manifest.sh` reads each source through the contents API, which
+resolves the ref itself, whenever `GITHUB_TOKEN` is set. If that read fails for any reason it
+falls back to the raw URL, so the worst case is the old behaviour rather than a failed build.
+
+**The burst publishes twice.** A dispatched run waits `SETTLE_SECONDS` before rebuilding. The
+rest of the burst arrives during that pause and collapses into the single pending run the
+concurrency group allows, so five releases produce one complete catalogue commit rather than a
+partial one per plugin. The pending run still executes, finds nothing changed, and exits.
+
+Because dispatches are collapsed, a failure in the *last* run of a burst would otherwise leave
+the catalogue stale until something dispatched it by hand. The daily scheduled run exists only
+to close that gap; it is a no-op whenever the catalogue is already correct.
 
 ## The CI skip marker
 
