@@ -1,0 +1,38 @@
+version: 2
+updates:
+  # Keep GitHub Actions up to date
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # The screenshot harness. Nothing in CI runs it, so a bump is only exercised
+  # the next time someone captures screenshots. A Playwright bump also brings a
+  # new Chromium, which can shift rendering and churn every PNG in the plugin
+  # repositories. capture-screenshots.sh only installs when node_modules is
+  # missing, so delete screenshots/node_modules to pick up a merged bump.
+  - package-ecosystem: "npm"
+    directory: "/screenshots"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "npm"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # npm install runs on a workstation with docker access. Holding a release
+    # back a week gives a compromised publish time to be caught and pulled
+    # before it is proposed. Security updates are not held back.
+    cooldown:
+      default-days: 7

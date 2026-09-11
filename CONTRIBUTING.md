@@ -56,9 +56,9 @@ plugins. Each source is matched to its plugins by the `owner/repo` it was fetche
 
 ## How CI works
 
-One workflow, `.github/workflows/update-manifest.yml`. It regenerates `manifest.json` and the
-README table, and commits the result as `chore: update plugin catalogue`. If nothing changed,
-it exits without committing.
+The catalogue is published by one workflow, `.github/workflows/update-manifest.yml`. It
+regenerates `manifest.json` and the README table, and commits the result as
+`chore: update plugin catalogue`. If nothing changed, it exits without committing.
 
 It runs on three triggers:
 
@@ -103,6 +103,18 @@ partial one per plugin. The pending run still executes, finds nothing changed, a
 Because dispatches are collapsed, a failure in the *last* run of a burst would otherwise leave
 the catalogue stale until something dispatched it by hand. The daily scheduled run exists only
 to close that gap; it is a no-op whenever the catalogue is already correct.
+
+### Code scanning and dependency updates
+
+`.github/workflows/codeql.yml` runs CodeQL over the workflows and the screenshot harness on
+pushes and pull requests to `main`, and weekly. The shell scripts are not covered; CodeQL has
+no extractor for them.
+
+Dependabot opens weekly PRs for the GitHub Actions and for the screenshot harness's npm
+packages. Leave the skip marker off when merging an Actions bump: `update-manifest.yml` has no
+pull request trigger, so the push that lands the bump is the first run of the bumped action,
+and a marked merge defers that to the next daily run. Nothing in CI runs the screenshot
+harness at all, so read the notes in `.github/dependabot.yml` before merging a Playwright bump.
 
 ## The CI skip marker
 
