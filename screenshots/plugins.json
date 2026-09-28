@@ -92,6 +92,11 @@
           "maxHeight": 1500
         },
         {
+          "output": "docs/images/transcode-guard-simultaneous-transcodes.png",
+          "from": "Simultaneous Transcodes",
+          "to": "GPU Resource Guard"
+        },
+        {
           "output": "docs/images/transcode-guard-gpu-guard.png",
           "from": "GPU Resource Guard",
           "to": "Paused Transcode Reaper",
@@ -126,6 +131,22 @@
         "TranscodeLimitHeader": "Transcode limit reached",
         "TranscodeLimitMessage": "You've transcoded {{transcodes}} videos in the last {{timewindow}} due to unsupported formats, which is over this server's limit of {{limit}}. Switch to a client that can direct play (mpv, VLC, or Jellyfin Media Player) to keep watching.",
         "UseStickyTranscodeLimitMessages": false,
+        "$comment-EnableConcurrentTranscodeLimit": "On for the same reason as the transcode limit. A global maximum plus one per-user override in each direction shows that the user's own value wins whether it is higher or lower; demo has no entry, so its field shows the inherited global value.",
+        "EnableConcurrentTranscodeLimit": true,
+        "MaxConcurrentTranscodes": 2,
+        "UserConcurrentTranscodeLimits": [
+          {
+            "UserId": "7a2c9d0b5e134f8a96b3c7d1e0f2a845",
+            "MaxTranscodes": 4
+          },
+          {
+            "UserId": "9f1b3e6c8a0d47259c4e7b2f5a8d0c31",
+            "MaxTranscodes": 1
+          }
+        ],
+        "ConcurrentTranscodeLimitHeader": "Too many transcodes at once",
+        "ConcurrentTranscodeLimitMessage": "You're already transcoding {{active}} video(s) on other devices, and this server allows {{limit}} at a time. Stop one, or switch to a client that can direct play (mpv, VLC, or Jellyfin Media Player), to watch this.",
+        "UseStickyConcurrentTranscodeLimitMessages": false,
         "EnableMotd": true,
         "MotdMessage": "Scheduled maintenance this Sunday 02:00-04:00 UTC.",
         "UseStickyMotdMessages": true,
