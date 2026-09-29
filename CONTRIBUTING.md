@@ -114,12 +114,12 @@ Renovate (`.github/workflows/renovate.yml`, configured in `.github/renovate.json
 GitHub Actions and the screenshot harness's npm packages up to date. Minor and patch updates
 merge on their own once every check passes and the release is 3 days old (7 for the
 screenshot harness). Majors wait for approval on the Dependency Dashboard issue. Security
-fixes skip the wait: Renovate opens them from the repository's Dependabot alerts, and
-Dependabot's own security-update PRs are off so each fix arrives once. Leave the skip marker
-off when merging an Actions bump by hand: `update-manifest.yml` has no pull request trigger,
-so the push that lands the bump is the first run of the bumped action, and a marked merge
-defers that to the next daily run. Nothing in CI runs the screenshot harness at all, so read
-the notes in `.github/renovate.json5` before relying on a Playwright bump.
+fixes skip the wait: Renovate opens them from the repository's Dependabot alerts and from
+osv.dev, and Dependabot's own security-update PRs are off so each fix arrives once. Leave the
+skip marker off when merging an Actions bump by hand: `update-manifest.yml` has no pull
+request trigger, so the push that lands the bump is the first run of the bumped action, and a
+marked merge defers that to the next daily run. Nothing in CI runs the screenshot harness at
+all, so read the notes in `.github/renovate.json5` before relying on a Playwright bump.
 
 ## The CI skip marker
 
