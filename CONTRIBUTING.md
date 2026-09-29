@@ -108,7 +108,9 @@ to close that gap; it is a no-op whenever the catalogue is already correct.
 
 `.github/workflows/codeql.yml` runs CodeQL over the workflows and the screenshot harness on
 pushes and pull requests to `main`, and weekly. The shell scripts are not covered; CodeQL has
-no extractor for them.
+no extractor for them. The query suite is set in `.github/codeql/codeql-config.yml`, which also
+turns off `actions/unpinned-tag`: actions are referenced by version tag rather than commit SHA,
+so that rule would flag every third-party action again after each Renovate bump.
 
 Renovate (`.github/workflows/renovate.yml`, configured in `.github/renovate.json5`) keeps the
 GitHub Actions and the screenshot harness's npm packages up to date. Minor and patch updates

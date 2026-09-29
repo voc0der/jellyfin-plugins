@@ -1,0 +1,15 @@
+name: "Jellyfin Plugins CodeQL config"
+
+queries:
+  - uses: security-and-quality
+
+query-filters:
+  # Actions are referenced by version tag rather than commit SHA, and Renovate keeps the
+  # tags current. This rule flags every tag reference to an action GitHub doesn't own, and
+  # dismissing the alert doesn't hold: the next Renovate bump closes it and opens a new one.
+  # The cost: if a tag is moved upstream, the next run uses the new commit, with no pull
+  # request and no three-day wait. GitHub's Actions lockfile (.github/workflows/actions.lock)
+  # pins commits without changing the workflows, and this rule accepts it, but its runtime
+  # enforcement is still in early access.
+  - exclude:
+      id: actions/unpinned-tag
