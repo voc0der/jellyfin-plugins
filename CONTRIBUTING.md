@@ -110,11 +110,15 @@ to close that gap; it is a no-op whenever the catalogue is already correct.
 pushes and pull requests to `main`, and weekly. The shell scripts are not covered; CodeQL has
 no extractor for them.
 
-Dependabot opens weekly PRs for the GitHub Actions and for the screenshot harness's npm
-packages. Leave the skip marker off when merging an Actions bump: `update-manifest.yml` has no
-pull request trigger, so the push that lands the bump is the first run of the bumped action,
-and a marked merge defers that to the next daily run. Nothing in CI runs the screenshot
-harness at all, so read the notes in `.github/dependabot.yml` before merging a Playwright bump.
+Renovate (`.github/workflows/renovate.yml`, configured in `.github/renovate.json5`) keeps the
+GitHub Actions and the screenshot harness's npm packages up to date. Minor and patch updates
+merge on their own once every check passes and the release is 3 days old (7 for the screenshot
+harness). Majors wait for approval on the Dependency Dashboard issue. Dependabot still opens
+security fixes. Leave the skip marker off when merging an Actions bump by hand:
+`update-manifest.yml` has no pull request trigger, so the push that lands the bump is the first
+run of the bumped action, and a marked merge defers that to the next daily run. Nothing in CI
+runs the screenshot harness at all, so read the notes in `.github/renovate.json5` before
+relying on a Playwright bump.
 
 ## The CI skip marker
 
