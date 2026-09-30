@@ -58,6 +58,11 @@ Add an entry to `plugins.json`:
 - `api` is only needed when the page calls something beyond the plugin
   configuration. Stubs already exist for `getVirtualFolders`, `getUsers`,
   `getSessions` and `ajax`; each defaults to empty.
+- `api.ajax` maps `METHOD /path` to a JSON response, for example
+  `"GET /Plugins/ImdbRatings/RunHistory": [{ "Status": "Completed", ... }]`.
+  Unmatched requests resolve to `{}` and never contact the server. The IMDb
+  fixture includes five synthetic runs with fixed dates, including a cache
+  fallback, an HTTP failure, and cancellation. Do not include download URLs.
 
 ## Things that will bite you if you change the injection
 
@@ -72,6 +77,7 @@ Add an entry to `plugins.json`:
   same-document navigation, which would leave the previous plugin's scripts,
   timers and `pageshow` listeners attached to the host element.
 - **`Date.prototype.toLocaleTimeString` is frozen** so pages that stamp a "last
-  updated" time stay reproducible.
+  updated" time stay reproducible. The browser uses `en-US` and
+  `America/New_York` so dated fixtures render consistently across machines.
 - **`GET /Startup/User` before `POST /Startup/User`** is not redundant: the POST
   updates the default administrator and 404s until the GET has materialised it.
