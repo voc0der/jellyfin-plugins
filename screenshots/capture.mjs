@@ -48,7 +48,11 @@ function injectConfigPage({ html, config, api, frozenTime }) {
         getVirtualFolders: () => settled(api.getVirtualFolders ?? []),
         getUsers: () => settled(api.getUsers ?? []),
         getSessions: () => settled(api.getSessions ?? []),
-        ajax: () => settled({})
+        ajax: request => {
+            const path = new URL(request.url, window.location.href).pathname;
+            const key = `${(request.type ?? 'GET').toUpperCase()} ${path}`;
+            return settled(api.ajax?.[key] ?? {});
+        }
     });
 
     // The loading overlay is modal and would sit on top of the screenshot.
@@ -214,7 +218,12 @@ async function main() {
     console.log(`  ${server.base} ${server.reused ? '(reused running container)' : '(fresh container)'}`);
 
     const browser = await chromium.launch();
-    const page = await browser.newPage({ viewport: VIEWPORT, deviceScaleFactor: 2 });
+    const page = await browser.newPage({
+        viewport: VIEWPORT,
+        deviceScaleFactor: 2,
+        locale: 'en-US',
+        timezoneId: 'America/New_York'
+    });
 
     let failed = false;
 

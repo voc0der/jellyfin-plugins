@@ -13,6 +13,52 @@
         "IncludeSeasonAverages": true,
         "EnableMetadataProvider": true,
         "EnableItemDebugLogging": false
+      },
+      "api": {
+        "ajax": {
+          "GET /Plugins/ImdbRatings/RunHistory": [
+            {
+              "StartedAtUtc": "2026-09-30T07:00:00Z",
+              "FinishedAtUtc": "2026-09-30T07:00:12Z",
+              "Status": "Completed",
+              "Summary": "128 ratings updated; 2041 skipped; 0 not found.",
+              "Warnings": []
+            },
+            {
+              "StartedAtUtc": "2026-09-29T07:00:00Z",
+              "FinishedAtUtc": "2026-09-29T07:00:18Z",
+              "Status": "Warning",
+              "Summary": "0 ratings updated; 2169 skipped; 0 not found.",
+              "Warnings": [
+                "Download failed; retried once. HTTP 403: Forbidden.",
+                "Used an older cached ratings file after download failed. HTTP 403: Forbidden."
+              ]
+            },
+            {
+              "StartedAtUtc": "2026-09-28T07:00:00Z",
+              "FinishedAtUtc": "2026-09-28T07:00:03Z",
+              "Status": "Failed",
+              "Summary": "HTTP 404: Not Found.",
+              "Warnings": [
+                "Download failed; retried once. HTTP 404: Not Found."
+              ]
+            },
+            {
+              "StartedAtUtc": "2026-09-27T07:00:00Z",
+              "FinishedAtUtc": "2026-09-27T07:00:04Z",
+              "Status": "Cancelled",
+              "Summary": "Refresh cancelled.",
+              "Warnings": []
+            },
+            {
+              "StartedAtUtc": "2026-09-26T07:00:00Z",
+              "FinishedAtUtc": "2026-09-26T07:01:09Z",
+              "Status": "Completed",
+              "Summary": "92 ratings updated; 2077 skipped; 0 not found.",
+              "Warnings": []
+            }
+          ]
+        }
       }
     },
     {
