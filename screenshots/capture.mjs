@@ -146,6 +146,22 @@ async function capturePlugin(page, plugin, base) {
     const written = [];
 
     for (const shot of shots) {
+        // A page split into tabs only lays out the tab on screen: every heading on
+        // the others measures as zero, so the shot's tab is opened before anything
+        // is measured, by clicking it the way an admin would.
+        if (shot.tab) {
+            await page.evaluate(tab => {
+                const button = document.querySelector(`.page.type-interior [role="tab"][data-tab="${tab}"]`);
+                if (!button) {
+                    throw new Error(`no tab "${tab}" on this page`);
+                }
+
+                button.click();
+                window.scrollTo(0, 0);
+            }, shot.tab);
+            await page.waitForTimeout(300);
+        }
+
         const clip = await page.evaluate(({ from, to, maxHeight }) => {
             const host = document.querySelector('.page.type-interior');
             const content = host.querySelector('.content-primary');

@@ -120,38 +120,45 @@
       "id": "transcode-guard",
       "repo": "../jellyfin-plugin-transcode-guard",
       "page": "Configuration/configPage.html",
+      "$comment-shots": "One shot per settings tab. Each starts at the top of the page, so the dashboard header and the tab bar (with that tab selected) are in frame, and runs to the Save button.",
       "shots": [
         {
+          "tab": "playback",
           "output": "docs/images/transcode-guard-playback-settings.png",
           "to": "Client Filters",
           "maxHeight": 1200
         },
         {
-          "output": "docs/images/transcode-guard-login-monitor.png",
-          "from": "Login Nag Settings",
-          "to": "Transcode Limit"
+          "tab": "browser",
+          "output": "docs/images/transcode-guard-browser-install-warning.png"
         },
         {
-          "output": "docs/images/transcode-guard-transcode-limit.png",
-          "from": "Transcode Limit",
-          "to": "Message of the Day",
-          "maxHeight": 1500
+          "tab": "login",
+          "output": "docs/images/transcode-guard-login-monitor.png"
         },
         {
-          "output": "docs/images/transcode-guard-simultaneous-transcodes.png",
-          "from": "Simultaneous Transcodes",
-          "to": "GPU Resource Guard"
+          "tab": "limit",
+          "output": "docs/images/transcode-guard-transcode-limit.png"
         },
         {
-          "output": "docs/images/transcode-guard-gpu-guard.png",
-          "from": "GPU Resource Guard",
-          "to": "Paused Transcode Reaper",
-          "maxHeight": 1200
+          "tab": "simultaneous",
+          "output": "docs/images/transcode-guard-simultaneous-transcodes.png"
         },
         {
-          "output": "docs/images/transcode-guard-paused-reaper.png",
-          "from": "Paused Transcode Reaper",
-          "maxHeight": 1700
+          "tab": "gpu",
+          "output": "docs/images/transcode-guard-gpu-guard.png"
+        },
+        {
+          "tab": "reaper",
+          "output": "docs/images/transcode-guard-paused-reaper.png"
+        },
+        {
+          "tab": "motd",
+          "output": "docs/images/transcode-guard-motd.png"
+        },
+        {
+          "tab": "sessions",
+          "output": "docs/images/transcode-guard-live-sessions.png"
         }
       ],
       "config": {
@@ -193,6 +200,12 @@
         "ConcurrentTranscodeLimitHeader": "Too many transcodes at once",
         "ConcurrentTranscodeLimitMessage": "You're already transcoding {{active}} video(s) on other devices, and this server allows {{limit}} at a time. Stop one, or switch to a client that can direct play (mpv, VLC, or Jellyfin Media Player), to watch this.",
         "UseStickyConcurrentTranscodeLimitMessages": false,
+        "$comment-EnableBrowserInstallNag": "On for the same reason as the transcode limit. The values are the ones the hand-captured shot this replaces showed.",
+        "EnableBrowserInstallNag": true,
+        "BrowserInstallUrl": "https://jellyfin.org/downloads/clients/",
+        "BrowserNagTitle": "Transcoding detected",
+        "BrowserNagMessage": "Your browser is causing this stream to be transcoded. For improved playback, install the recommended client.",
+        "BrowserNagAutoCloseSeconds": 60,
         "EnableMotd": true,
         "MotdMessage": "Scheduled maintenance this Sunday 02:00-04:00 UTC.",
         "UseStickyMotdMessages": true,

@@ -63,6 +63,11 @@ Add an entry to `plugins.json`:
   Unmatched requests resolve to `{}` and never contact the server. The IMDb
   fixture includes five synthetic runs with fixed dates, including a cache
   fallback, an HTTP failure, and cancellation. Do not include download URLs.
+- `shots` replaces `output` for a page too long for one image. Each shot runs
+  `from` one heading `to` another (leave `from` off to start at the top of the
+  page, `to` off to run to the end), and `maxHeight` caps a long one at a
+  screenful. On a page split into tabs, `tab` opens one first: it is the
+  `data-tab` of that tab's `role="tab"` button.
 
 ## Things that will bite you if you change the injection
 
