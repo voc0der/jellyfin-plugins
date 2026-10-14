@@ -500,6 +500,25 @@
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-session-provisioning/main/icon.png"
   },
   {
+    "guid": "9f276cce-98c3-4554-b495-61cf673cf34c",
+    "name": "Torrent Throttle",
+    "overview": "Reserve bandwidth for remote playback by adjusting torrent speed limits.",
+    "description": "Event-driven qBittorrent upload throttling with optional download throttling, remote playback accounting, and automatic limit restoration.",
+    "owner": "voc0der",
+    "category": "General",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-torrent-throttle/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- feat(throttle): reserve qBittorrent bandwidth for remote playback (2f2ef0c)\n- chore: initial commit (91a8325)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-torrent-throttle/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-torrent-throttle/releases/download/1.0.0.1/Torrent_Throttle_1.0.0.1.zip",
+        "checksum": "92cdb7fb3f4ba3a483eba3b1b6bc6caa",
+        "timestamp": "2026-10-14T11:55:25Z"
+      }
+    ]
+  },
+  {
     "category": "General",
     "guid": "2ce6b237-2610-4dfd-a34b-3f4c2ac64a88",
     "name": "Transcode Guard",
