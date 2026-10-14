@@ -290,6 +290,46 @@
           }
         ]
       }
+    },
+    {
+      "id": "torrent-throttle",
+      "repo": "../jellyfin-plugin-torrent-throttle",
+      "page": "Configuration/configPage.html",
+      "shots": [
+        {
+          "output": "docs/images/torrent-throttle-settings.png",
+          "to": "Bandwidth budget"
+        },
+        {
+          "output": "docs/images/torrent-throttle-bandwidth.png",
+          "from": "Bandwidth budget"
+        }
+      ],
+      "config": {
+        "Enabled": true,
+        "WebUiUrl": "http://192.0.2.20:8080",
+        "Username": "jellyfin",
+        "Password": "demo-password",
+        "ApiKey": "",
+        "MaxUploadKiBps": 5120,
+        "ThrottleDownload": true,
+        "MaxDownloadKiBps": 51200,
+        "DelaySeconds": 5,
+        "HeadroomPercent": 10,
+        "UnknownStreamMbps": 20
+      },
+      "api": {
+        "ajax": {
+          "GET /TorrentThrottle/Status": {
+            "State": "Throttling",
+            "RemoteStreams": 2,
+            "PendingStreams": 0,
+            "ReservedBytesPerSecond": 2750000,
+            "UploadBytesPerSecond": 2492416,
+            "DownloadBytesPerSecond": 49678336
+          }
+        }
+      }
     }
   ]
 }
