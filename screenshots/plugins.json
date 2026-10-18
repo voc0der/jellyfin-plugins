@@ -162,6 +162,7 @@
         }
       ],
       "config": {
+        "NagHeader": "Your client is transcoding",
         "NagMessage": "This is transcoding and using extra server power. Try a client that can direct play this file.",
         "UseStickyPlaybackMessages": false,
         "DelaySeconds": 15,
@@ -176,6 +177,7 @@
         "EnableLoginNag": true,
         "LoginNagThreshold": 5,
         "LoginNagTimeWindow": "Week",
+        "LoginNagHeader": "Time to switch clients?",
         "LoginNagMessage": "You have transcoded {count} times this week. Check your client's playback settings.",
         "UseStickyLoginNagMessages": false,
         "$comment-EnableTranscodeLimit": "On, because off collapses the whole section to a single checkbox and there is nothing left to screenshot. Threshold sits above LoginNagThreshold, which is the way the page tells admins to set it.",
@@ -207,6 +209,7 @@
         "BrowserNagMessage": "Your browser is causing this stream to be transcoded. For improved playback, install the recommended client.",
         "BrowserNagAutoCloseSeconds": 60,
         "EnableMotd": true,
+        "MotdHeader": "Server news",
         "MotdMessage": "Scheduled maintenance this Sunday 02:00-04:00 UTC.",
         "UseStickyMotdMessages": true,
         "MotdIncludedClientPatterns": [],
