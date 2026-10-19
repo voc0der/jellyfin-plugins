@@ -1,0 +1,65 @@
+Created with the built-in image generation tool.
+
+transcode-guard
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name TRANSCODE / GUARD, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted warm amber satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains TRANSCODE / GUARD, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.
+
+---
+
+torrent-throttle
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name TORRENT / THROTTLE, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted cyan satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains TORRENT / THROTTLE, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.
+
+---
+
+session-provisioning
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name SESSION / PROVISIONING, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted violet satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains SESSION / PROVISIONING, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.
+
+---
+
+seerr-proxy
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name SEERR / PROXY, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted magenta satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains SEERR / PROXY, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.
+
+---
+
+restore-userdata-after-move
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name RESTORE / USERDATA / AFTER MOVE, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted emerald mint satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains RESTORE / USERDATA / AFTER MOVE, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.
+
+---
+
+imdb-ratings
+Background replacement only. Edit this plugin artwork to use a DISTINCTIVE ORIGINAL BACKGROUND SYSTEM, entirely different from the old technical navy artwork. Keep the exact foreground icon, exact plugin name IMDb / RATINGS, lettering, colors, size and layout intact. No Jellyfin branding or additional words.
+
+REMOVE THE ENTIRE OLD BACKGROUND including ALL blue circuitry, thin traces, small squares, circles, dotted arcs, HUD rings and central navy glow. Nothing from that background should remain.
+
+NEW ART DIRECTION — "Obsidian folds": a premium minimalist abstract composition of oversized matte charcoal architectural folds, using broad asymmetrical diagonal shapes. Background base is warm near-black graphite, not blue. One enormous folded charcoal plane enters from the upper-left corner at a 30 degree angle, showing a softly lit thick edge and a deep clean shadow. A second wider graphite plane enters from the bottom-right corner at the same angle, with a broad muted golden yellow satin inset band and a soft reflected colored wash. Shape boundaries are clean, tactile and bold, not thin neon lines. Gentle fine material grain, softly shaded depth. Low-contrast planes recede behind the emblem and text; the central region stays uncluttered and very dark to preserve readability. The colored bands should be subtle but visibly wide. This must look like an original editorial graphic identity built from sculpted layers, not a cybersecurity dashboard, circuit board, radar or screenshot. Avoid concentric shapes, grids, tiny decorative details and technical line work.
+
+Keep landscape 16:9, edge-to-edge background, no border. All foreground content stays in the central crop-safe area exactly as it is. The ONLY text remains IMDb / RATINGS, with slash meaning existing line break, never a literal slash. Make no changes to the plugin symbol or wording.

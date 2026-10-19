@@ -29,3 +29,6 @@ Add that URL under **Dashboard > Plugins > Repositories** in Jellyfin.
 
 Each plugin remains independently built, released, and maintained in its own GitHub
 repository.
+
+The shared [icon design prompts and asset map](docs/plugin-icons/README.md) are
+preserved here for future artwork updates.
