@@ -1,5 +1,7 @@
 # Jellyfin Plugins
 
+![Since badge](https://img.shields.io/badge/since-08%2F24%2F2026-blue)
+
 This repository combines the release catalogues for voc0der's Jellyfin plugins into
 one repository URL:
 
