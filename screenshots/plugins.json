@@ -129,6 +129,10 @@
           "maxHeight": 1200
         },
         {
+          "tab": "prerolls",
+          "output": "docs/images/transcode-guard-prerolls.png"
+        },
+        {
           "tab": "browser",
           "output": "docs/images/transcode-guard-browser-install-warning.png"
         },
@@ -202,6 +206,17 @@
         "ConcurrentTranscodeLimitHeader": "Too many transcodes at once",
         "ConcurrentTranscodeLimitMessage": "You're already transcoding {{active}} video(s) on other devices, and this server allows {{limit}} at a time. Stop one, or switch to a client that can direct play (mpv, VLC, or Jellyfin Media Player), to watch this.",
         "UseStickyConcurrentTranscodeLimitMessages": false,
+        "$comment-EnablePrerolls": "On so the shot shows the pre-roll settings rather than just the switch.",
+        "EnablePrerolls": true,
+        "PrerollFolder": "/media/prerolls",
+        "PrerollChancePercent": 100,
+        "PrerollSessionLimit": 1,
+        "PrerollOncePerUser": true,
+        "PrerollPlayAll": false,
+        "PrerollRandom": false,
+        "PrerollIncludedClientPatterns": [],
+        "PrerollExcludedClientPatterns": ["Roku"],
+        "PrerollExcludedUserIds": [],
         "$comment-EnableBrowserInstallNag": "On for the same reason as the transcode limit. The values are the ones the hand-captured shot this replaces showed.",
         "EnableBrowserInstallNag": true,
         "BrowserInstallUrl": "https://jellyfin.org/downloads/clients/",
