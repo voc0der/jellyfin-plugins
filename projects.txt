@@ -5,3 +5,4 @@ All projects are located above this directory:
 ../jellyfin-plugin-restore-userdata-after-move
 ../jellyfin-plugin-seerr-proxy
 ../jellyfin-plugin-torrent-throttle
+../jellyfin-plugin-seerr-integration
