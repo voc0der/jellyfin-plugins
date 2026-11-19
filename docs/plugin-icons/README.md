@@ -14,6 +14,7 @@ the individual plugin repositories.
 | --- | --- | --- |
 | IMDb Ratings | Golden yellow | [icon.png](https://github.com/voc0der/jellyfin-plugin-imdb-ratings/blob/main/icon.png) |
 | Restore User Data After Move | Emerald mint | [icon.png](https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/blob/main/icon.png) |
+| Seerr Integration | Fuchsia | [icon.png](https://github.com/voc0der/jellyfin-plugin-seerr-integration/blob/main/icon.png) |
 | Seerr Proxy | Magenta | [icon.png](https://github.com/voc0der/jellyfin-plugin-seerr-proxy/blob/main/icon.png) |
 | Session Provisioning | Violet | [icon.png](https://github.com/voc0der/jellyfin-plugin-session-provisioning/blob/main/icon.png) |
 | Torrent Throttle | Cyan | [icon.png](https://github.com/voc0der/jellyfin-plugin-torrent-throttle/blob/main/icon.png) |
