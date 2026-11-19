@@ -375,6 +375,25 @@
   },
   {
     "category": "General",
+    "guid": "c937e280-0ac7-4250-a620-8c5892e628fe",
+    "name": "Seerr Integration",
+    "description": "Adds a Requests page to Jellyfin Web for discovering and requesting movies and series in Seerr. Every request is made as the signed-in Jellyfin user through Seerr Proxy. Requires the Seerr Proxy and JavaScript Injector plugins.",
+    "owner": "voc0der",
+    "overview": "Discover and request movies and series from Seerr inside Jellyfin",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-seerr-integration/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- feat: add the Seerr Integration plugin (#1) (e3a7d51)\n- chore: initialize repository (7dea630)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-seerr-integration/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-seerr-integration/releases/download/1.0.0.1/Seerr_Integration_1.0.0.1.zip",
+        "checksum": "2346431d42033211c9d48b01fd743f6b",
+        "timestamp": "2026-11-19T15:50:01Z"
+      }
+    ]
+  },
+  {
+    "category": "General",
     "guid": "1ac3cf0f-f0f9-443a-be08-be38e48ff683",
     "name": "Seerr Proxy",
     "description": "Authenticated Jellyfin transport for Seerr. Linked Jellyfin users can discover the plugin, call allowlisted Seerr API endpoints through Jellyfin, and submit requests as themselves without receiving Seerr credentials.",
