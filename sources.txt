@@ -5,3 +5,4 @@ https://raw.githubusercontent.com/voc0der/jellyfin-plugin-restore-userdata-after
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-seerr-proxy/main/manifest.json
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-torrent-throttle/main/manifest.json
 https://raw.githubusercontent.com/voc0der/jellyfin-plugin-seerr-integration/main/manifest.json
+https://raw.githubusercontent.com/voc0der/jellyfin-plugin-arr-calendar/main/manifest.json
