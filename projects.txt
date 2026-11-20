@@ -7,3 +7,4 @@ All projects are located above this directory:
 ../jellyfin-plugin-torrent-throttle
 ../jellyfin-plugin-seerr-integration
 ../jellyfin-plugin-arr-calendar
+../jellyfin-plugin-sso
