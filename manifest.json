@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-arr-calendar/main/icon.png",
     "versions": [
       {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- fix(settings): check off an active Seerr Integration (#4) (f67f2c1)\n- chore(deps): update dependency dotnet-sdk to v11 (#3) (0cd6050)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-arr-calendar/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-arr-calendar/releases/download/1.0.0.2/Arr_Calendar_1.0.0.2.zip",
+        "checksum": "1ba7aef4c905d7dbc8d3c208b8366370",
+        "timestamp": "2026-11-20T11:01:00Z"
+      },
+      {
         "version": "1.0.0.1",
         "changelog": "## What's Changed\n\n- feat: add the Arr Calendar plugin (#1) (522eb36)\n- chore: initialize repository (53b6be4)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-arr-calendar/compare/1.0.0.0...1.0.0.1\n",
         "targetAbi": "12.0.0.0",
