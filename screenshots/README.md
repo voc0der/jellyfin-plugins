@@ -57,7 +57,20 @@ Add an entry to `plugins.json`:
   free of anything real.
 - `api` is only needed when the page calls something beyond the plugin
   configuration. Stubs already exist for `getVirtualFolders`, `getUsers`,
-  `getSessions` and `ajax`; each defaults to empty.
+  `getSessions`, `getJSON` and `ajax`; each defaults to empty.
+- `api.getJSON` maps a path to what `ApiClient.getJSON` resolves to for any
+  URL with that path, for example
+  `"/Library/MediaFolders": { "Items": [{ "Id": "...", "Name": "Movies" }] }`.
+- `controller` is for a page whose script is a view controller
+  (`data-controller="__plugin/..."`) rather than an inline `<script>`: the
+  path, in the plugin's repository, of that module. Jellyfin imports it and
+  calls its default export with the page, and so does the harness.
+- `click` lists selectors, inside the page, clicked in order once it has
+  loaded, for a state only reachable through them, such as a provider loaded
+  into a form.
+- `assets` maps a path and query the page fetches from its own plugin, which
+  is not installed, to a file in the plugin's repository, for example
+  `"/web/configurationpage?name=sso-authentication.css": "Jellyfin.Plugin.SsoAuthentication/Config/style.css"`.
 - `api.ajax` maps `METHOD /path` to a JSON response, for example
   `"GET /Plugins/ImdbRatings/RunHistory": [{ "Status": "Completed", ... }]`.
   Unmatched requests resolve to `{}` and never contact the server. The IMDb
