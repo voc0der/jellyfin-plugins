@@ -610,6 +610,16 @@
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-session-provisioning/main/icon.png"
   },
   {
+    "category": "Authentication",
+    "guid": "505ce9d1-d916-42fa-86ca-673ef241d7df",
+    "name": "SSO Authentication",
+    "description": "Sign in to Jellyfin through an OpenID Connect or SAML provider. Independently maintained fork of 9p4/jellyfin-plugin-sso.",
+    "owner": "voc0der",
+    "overview": "Authenticate users against an SSO provider",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-sso/main/icon.png",
+    "versions": []
+  },
+  {
     "guid": "9f276cce-98c3-4554-b495-61cf673cf34c",
     "name": "Torrent Throttle",
     "overview": "Reserve bandwidth for remote playback by adjusting torrent speed limits.",
