@@ -12,6 +12,7 @@ the individual plugin repositories.
 
 | Plugin | Accent | Published image |
 | --- | --- | --- |
+| Arr Calendar | Scarlet | [icon.png](https://github.com/voc0der/jellyfin-plugin-arr-calendar/blob/main/icon.png) |
 | IMDb Ratings | Golden yellow | [icon.png](https://github.com/voc0der/jellyfin-plugin-imdb-ratings/blob/main/icon.png) |
 | Restore User Data After Move | Emerald mint | [icon.png](https://github.com/voc0der/jellyfin-plugin-restore-userdata-after-move/blob/main/icon.png) |
 | Seerr Integration | Fuchsia | [icon.png](https://github.com/voc0der/jellyfin-plugin-seerr-integration/blob/main/icon.png) |
