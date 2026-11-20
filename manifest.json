@@ -1,5 +1,24 @@
 [
   {
+    "category": "General",
+    "guid": "c3d840e2-b80d-4f3f-93c7-8b246d01ce0f",
+    "name": "Arr Calendar",
+    "description": "Adds a Calendar page to Jellyfin Web with upcoming episodes from Sonarr and movie releases from Radarr in one month or week view, including live download progress. With Seerr Integration installed, Calendar sits under Requests on devices with a mouse. Requires the JavaScript Injector plugin.",
+    "owner": "voc0der",
+    "overview": "Sonarr and Radarr calendars, together, inside Jellyfin",
+    "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-arr-calendar/main/icon.png",
+    "versions": [
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- feat: add the Arr Calendar plugin (#1) (522eb36)\n- chore: initialize repository (53b6be4)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-arr-calendar/compare/1.0.0.0...1.0.0.1\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-arr-calendar/releases/download/1.0.0.1/Arr_Calendar_1.0.0.1.zip",
+        "checksum": "eb33e11c33a4f296aba64e8af1095a70",
+        "timestamp": "2026-11-20T01:42:29Z"
+      }
+    ]
+  },
+  {
     "category": "Metadata",
     "guid": "f5a3c7e1-9b2d-4f6a-8e0c-1d3b5a7c9e2f",
     "name": "IMDb Ratings",
