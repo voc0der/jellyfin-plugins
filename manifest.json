@@ -611,13 +611,22 @@
   },
   {
     "category": "Authentication",
-    "guid": "505ce9d1-d916-42fa-86ca-673ef241d7df",
+    "guid": "3c3b1a1d-7470-466f-a565-b3041e54724d",
     "name": "SSO Authentication",
-    "description": "Sign in to Jellyfin through an OpenID Connect or SAML provider. Independently maintained fork of 9p4/jellyfin-plugin-sso.",
+    "description": "Lets users sign in to Jellyfin through an OpenID Connect or SAML identity provider such as Authelia, authentik, Keycloak, Pocket ID or Kanidm. Accounts are created on first sign-in, and the provider's roles can decide who may sign in, who is an administrator, and which libraries and Live TV each account can use. Continues 9p4's SSO-Auth plugin under its own ID: remove that plugin first, and this one picks up its providers and linked accounts.",
     "owner": "voc0der",
-    "overview": "Authenticate users against an SSO provider",
+    "overview": "Sign in to Jellyfin with OpenID Connect or SAML",
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-sso/main/icon.png",
-    "versions": []
+    "versions": [
+      {
+        "version": "1.0.0.1",
+        "changelog": "## What's Changed\n\n- ci: build every pull request in its own context (7438209)\n- ci: analyse the workflows with CodeQL, and keep values out of release scripts (1333fbb)\n- fix(oidc): save profile pictures as Jellyfin does, and never fail sign-in over one (f279e3e)\n- fix: clear CodeQL's findings in the plugin and its tests (066bd23)\n- fix(ci): pin actions to full commit SHAs (4e95783)\n- docs: document the plugin for the family (3ad06c3)\n- feat(settings): import the settings 9p4's plugin left behind (ec3ea8c)\n- fix(saml): check roles when a sign-in completes (7a2a970)\n- fix(linking): link accounts on Jellyfin 12 (1ac8a4a)\n- fix(accounts): keep accounts from opening to an empty password (d8e6cdc)\n- chore: rebuild as a member of the plugin family on Jellyfin 12 (33c047c)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-sso/compare/586b86e0344c8aed08954dd502c860faf5f9160b...1.0.0.1\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-sso/releases/download/1.0.0.1/SSO_Authentication_1.0.0.1.zip",
+        "checksum": "a33bb507f20e5fb2e75632f30df38b6b",
+        "timestamp": "2026-11-20T23:02:47Z"
+      }
+    ]
   },
   {
     "guid": "9f276cce-98c3-4554-b495-61cf673cf34c",
