@@ -348,6 +348,84 @@
           }
         }
       }
+    },
+    {
+      "id": "sso",
+      "repo": "../jellyfin-plugin-sso",
+      "page": "Jellyfin.Plugin.SsoAuthentication/Config/configPage.html",
+      "$comment-controller": "The page has no inline script: Jellyfin loads it through data-controller, so the harness imports this module and calls it with the page. Load provider then fills the form with the provider below, which is what an admin sees after choosing it.",
+      "controller": "Jellyfin.Plugin.SsoAuthentication/Config/config.js",
+      "click": [
+        "#LoadProvider"
+      ],
+      "assets": {
+        "/web/configurationpage?name=sso-authentication.css": "Jellyfin.Plugin.SsoAuthentication/Config/style.css"
+      },
+      "shots": [
+        {
+          "output": "docs/images/sso-settings.png",
+          "maxHeight": 1500
+        }
+      ],
+      "config": {
+        "SamlConfigs": {},
+        "OidConfigs": {
+          "authelia": {
+            "OidEndpoint": "https://auth.example.com",
+            "OidClientId": "jellyfin",
+            "OidSecret": "demo-client-secret",
+            "Enabled": true,
+            "EnableAuthorization": true,
+            "EnableAllFolders": false,
+            "EnabledFolders": [
+              "a1f4c6d28e3b47f09c5d1e8a7b2f3c40",
+              "b7e2d9c14a6f48b3812c5d0e9f3a7b61"
+            ],
+            "AdminRoles": [
+              "jellyfin-admins"
+            ],
+            "Roles": [
+              "jellyfin-users"
+            ],
+            "EnableFolderRoles": false,
+            "FolderRoleMapping": [],
+            "EnableLiveTvRoles": false,
+            "EnableLiveTv": false,
+            "EnableLiveTvManagement": false,
+            "RoleClaim": "groups",
+            "OidScopes": [
+              "groups"
+            ],
+            "DefaultUsernameClaim": "preferred_username",
+            "DisablePushedAuthorization": true,
+            "SchemeOverride": "https"
+          }
+        }
+      },
+      "api": {
+        "getJSON": {
+          "/Library/MediaFolders": {
+            "Items": [
+              {
+                "Id": "a1f4c6d28e3b47f09c5d1e8a7b2f3c40",
+                "Name": "Movies"
+              },
+              {
+                "Id": "b7e2d9c14a6f48b3812c5d0e9f3a7b61",
+                "Name": "TV Shows"
+              },
+              {
+                "Id": "c3a8b5e07d2f419e6a4b8c1d5e9f0a72",
+                "Name": "Anime"
+              },
+              {
+                "Id": "e5b0a7c29f4d436a815c2e7b0d3f6a84",
+                "Name": "Music"
+              }
+            ]
+          }
+        }
+      }
     }
   ]
 }
