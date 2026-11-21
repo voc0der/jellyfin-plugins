@@ -619,6 +619,14 @@
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-sso/main/icon.png",
     "versions": [
       {
+        "version": "1.0.0.2",
+        "changelog": "## What's Changed\n\n- fix(e2e): wait for the browser to reach a restarted Jellyfin, not a probe from Node (31f3dfe)\n- fix(sign-in): clear CodeQL's findings in the password switch and its tests (5217853)\n- feat(sign-in): turn off password sign-in with JELLYFIN_ENABLE_PASSWORD_LOGIN (b971e03)\n- chore(deps): update dependency stylecop.analyzers to 1.3.180 (#1) (3f1cd09)\n- chore(deps): update dependency duende.identitymodel.oidcclient to v7 (71709e8)\n- chore(deps): update dependency dotnet-sdk to v11 (82e248e)\n- Update manifest.json for version 1.0.0.1 [skip ci] (ee2aff1)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-sso/compare/1.0.0.1...1.0.0.2\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-sso/releases/download/1.0.0.2/SSO_Authentication_1.0.0.2.zip",
+        "checksum": "31ab38d3a0837c88222c0a781dafdc12",
+        "timestamp": "2026-11-21T12:30:27Z"
+      },
+      {
         "version": "1.0.0.1",
         "changelog": "## What's Changed\n\n- ci: build every pull request in its own context (7438209)\n- ci: analyse the workflows with CodeQL, and keep values out of release scripts (1333fbb)\n- fix(oidc): save profile pictures as Jellyfin does, and never fail sign-in over one (f279e3e)\n- fix: clear CodeQL's findings in the plugin and its tests (066bd23)\n- fix(ci): pin actions to full commit SHAs (4e95783)\n- docs: document the plugin for the family (3ad06c3)\n- feat(settings): import the settings 9p4's plugin left behind (ec3ea8c)\n- fix(saml): check roles when a sign-in completes (7a2a970)\n- fix(linking): link accounts on Jellyfin 12 (1ac8a4a)\n- fix(accounts): keep accounts from opening to an empty password (d8e6cdc)\n- chore: rebuild as a member of the plugin family on Jellyfin 12 (33c047c)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-sso/compare/586b86e0344c8aed08954dd502c860faf5f9160b...1.0.0.1\n",
         "targetAbi": "12.0.0.0",
