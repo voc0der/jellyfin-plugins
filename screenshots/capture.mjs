@@ -48,6 +48,7 @@ function injectConfigPage({ html, config, api, frozenTime }) {
         getVirtualFolders: () => settled(api.getVirtualFolders ?? []),
         getUsers: () => settled(api.getUsers ?? []),
         getSessions: () => settled(api.getSessions ?? []),
+        getJSON: url => settled(api.getJSON?.[new URL(url, window.location.href).pathname] ?? {}),
         ajax: request => {
             const path = new URL(request.url, window.location.href).pathname;
             const key = `${(request.type ?? 'GET').toUpperCase()} ${path}`;
@@ -115,6 +116,14 @@ async function capturePlugin(page, plugin, base) {
     };
     page.on('console', onError);
 
+    // Files a page fetches from its own plugin, which is not installed here, are served
+    // from the plugin's repository instead.
+    for (const [path, file] of Object.entries(plugin.assets ?? {})) {
+        await page.route(
+            url => url.pathname + url.search === path,
+            route => route.fulfill({ path: resolve(REPO_ROOT, plugin.repo, file) }));
+    }
+
     await page.evaluate(injectConfigPage, {
         html,
         config: plugin.config ?? {},
@@ -122,8 +131,32 @@ async function capturePlugin(page, plugin, base) {
         frozenTime: '9:41:00 AM'
     });
 
+    // A page whose script is a view controller (data-controller="__plugin/...") has no
+    // inline script to re-create: Jellyfin imports that module and calls its default export
+    // with the page, so the harness does the same with the file `controller` names.
+    if (plugin.controller) {
+        const source = await readFile(resolve(REPO_ROOT, plugin.repo, plugin.controller), 'utf8');
+        await page.evaluate(async source => {
+            const host = document.querySelector('.page.type-interior');
+            const url = URL.createObjectURL(new Blob([source], { type: 'text/javascript' }));
+            try {
+                (await import(url)).default(host);
+            } finally {
+                URL.revokeObjectURL(url);
+            }
+        }, source);
+    }
+
     // Let the page's own load handler resolve its promises and paint.
     await page.waitForTimeout(1200);
+
+    // Controls clicked in order before the capture, for a state the page only reaches
+    // through them, such as a provider loaded into its form.
+    for (const selector of plugin.click ?? []) {
+        await page.click(`.page.type-interior ${selector}`);
+        await page.waitForTimeout(600);
+    }
+
     await page.evaluate(() => document.fonts.ready);
 
     // Anything the page's init did that moved the viewport -- focusing a field,
@@ -213,6 +246,7 @@ async function capturePlugin(page, plugin, base) {
     }
 
     page.off('console', onError);
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
     return { written, errors };
 }
 

@@ -18,6 +18,7 @@ the individual plugin repositories.
 | Seerr Integration | Fuchsia | [icon.png](https://github.com/voc0der/jellyfin-plugin-seerr-integration/blob/main/icon.png) |
 | Seerr Proxy | Magenta | [icon.png](https://github.com/voc0der/jellyfin-plugin-seerr-proxy/blob/main/icon.png) |
 | Session Provisioning | Violet | [icon.png](https://github.com/voc0der/jellyfin-plugin-session-provisioning/blob/main/icon.png) |
+| SSO Authentication | Electric blue | [icon.png](https://github.com/voc0der/jellyfin-plugin-sso/blob/main/icon.png) |
 | Torrent Throttle | Cyan | [icon.png](https://github.com/voc0der/jellyfin-plugin-torrent-throttle/blob/main/icon.png) |
 | Transcode Guard | Warm amber | [icon.png](https://github.com/voc0der/jellyfin-plugin-transcode-guard/blob/main/icon.png) |
 
