@@ -619,6 +619,14 @@
     "imageUrl": "https://raw.githubusercontent.com/voc0der/jellyfin-plugin-sso/main/icon.png",
     "versions": [
       {
+        "version": "1.0.0.4",
+        "changelog": "## What's Changed\n\n- fix(auth): validate automatic sign-in redirect targets (ec77202)\n- feat(auth): add optional automatic sign-in for Jellyfin Web (2d95c13)\n- Update manifest.json for version 1.0.0.3 [skip ci] (dfa7451)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-sso/compare/1.0.0.3...1.0.0.4\n",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/voc0der/jellyfin-plugin-sso/releases/download/1.0.0.4/SSO_Authentication_1.0.0.4.zip",
+        "checksum": "31065fb6228542968b95d80a50cbc2fc",
+        "timestamp": "2026-11-21T22:47:51Z"
+      },
+      {
         "version": "1.0.0.3",
         "changelog": "## What's Changed\n\n- fix(tests): clear CodeQL's path-combine finding in the fuzz campaign (037d0fe)\n- ci: fuzz SAML, OpenID states and account links (376c00f)\n- fix(saml): refuse a signature whose reference is not \"#\" and an ID (245a15f)\n- fix(tests): clear CodeQL's useless-upcast finding in the deleted-account test (d765e0b)\n- fix(tests): enforce 100% C# line coverage (9418e98)\n- Update manifest.json for version 1.0.0.2 [skip ci] (0a77304)\n\n**Full Changelog**: https://github.com/voc0der/jellyfin-plugin-sso/compare/1.0.0.2...1.0.0.3\n",
         "targetAbi": "12.0.0.0",
